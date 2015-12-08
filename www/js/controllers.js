@@ -1,6 +1,15 @@
 angular.module('starter.controllers', [])
 
-.controller('ChallengeCtrl', function($scope) {})
+.controller('ChallengeCtrl', function($scope) {
+  //set up mock data for challenge-feed template
+  $scope.challengers = [
+    {name: "AJ", segment: "X"},
+    {name: "Dave", segment: "Y"},
+    {name: "Justin", segment: "Z"},
+    {name: "Shan", segment: "A"},
+  ];
+
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
