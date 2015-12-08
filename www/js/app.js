@@ -50,6 +50,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  // set up create challenge state
+  .state('tab.create-challenge', {
+    url: '/create-challenge',
+    views: {
+      'create-challenge': {
+        templateUrl: 'templates/create-challenge.html',
+        controller: 'CreateCtrl'
+      }
+    }
+  })
+
   .state('tab.chats', {
       url: '/chats',
       views: {
