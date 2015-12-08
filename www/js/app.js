@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each tab has its own nav history stack:
 
   .state('tab.challenge-feed', {
-    url: '/dash',
+    url: '/challenge-feed',
     views: {
       'challenge-feed': {
         templateUrl: 'templates/challenge-feed.html',
@@ -91,6 +91,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/challenge-feed');
 
 });
