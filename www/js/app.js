@@ -83,3 +83,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
+
+
+//Mock Data
+
+var mockChallengers = [
+    {name: "AJ", segment: "X"},
+    {name: "Dave", segment: "Y"},
+    {name: "Justin", segment: "Z"},
+    {name: "Shan", segment: "A"},
+    {name: "Nick", segment: "B"},
+  ];
+
+
+
+  

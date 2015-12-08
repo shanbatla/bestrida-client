@@ -7,28 +7,28 @@ angular.module('starter.services', [])
   var chats = [{
     id: 0,
     name: 'AJ Mullins',
-    lastText: 'Challenged you to Segment X',
-    face: 'img/ben.png'
+    segment: 'Segment X',
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 1,
     name: 'David Lee',
-    lastText: 'Challenged you to Segment Y',
-    face: 'img/max.png'
+    segment: 'Segment Y',
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 2,
     name: 'Justin Zimmerman',
-    lastText: 'Challenged you to Segment Z',
-    face: 'img/adam.jpg'
+    segment: 'Segment Z',
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 3,
     name: 'Shan Batla',
-    lastText: 'Challenged you to Segment A',
-    face: 'img/perry.png'
+    segment: 'Segment A',
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 4,
     name: 'Nick Balestra',
-    lastText: 'Challenged you to Segment B',
-    face: 'img/mike.png'
+    segment: 'Segment B',
+    face: 'img/strava_profile_pic.png'
   }];
 
   return {

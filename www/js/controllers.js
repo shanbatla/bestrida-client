@@ -1,14 +1,8 @@
 angular.module('starter.controllers', [])
 
 .controller('ChallengeCtrl', function($scope) {
-  //set up mock data for challenge-feed template
-  $scope.challengers = [
-    {name: "AJ", segment: "X"},
-    {name: "Dave", segment: "Y"},
-    {name: "Justin", segment: "Z"},
-    {name: "Shan", segment: "A"},
-  ];
-
+  //set up mock data for challenge-feed template - data comes from app.js
+  $scope.challengers = mockChallengers;
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
