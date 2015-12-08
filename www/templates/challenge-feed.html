@@ -7,55 +7,18 @@
     </button>
 
     <!-- Challenge feed with list card -->
-    <div class="list card">
-      <div class="item item-divider">Challenge from AJ</div>
-      <div class="item item-body">
-        <div>
-          AJ challenges you to Segment X
+    <div ng-repeat="challenger in challengers">
+      <div class="list card">
+        <div class="item item-divider">Challenge from {{challenger.name}}</div>
+        <div class="item item-body">
+          <div>
+            {{challenger.name}} challenges you to Segment {{challenger.segment}}
+          </div>
         </div>
-      </div>
-      <div class="button-bar">
-        <a class="button">Accept</a>
-        <a class="button">Decline</a>
-      </div>
-    </div>
-
-    <div class="list card">
-      <div class="item item-divider">Challenge from Dave</div>
-      <div class="item item-body">
-        <div>
-          Dave challenges you to Segment Y
+        <div class="button-bar">
+          <a class="button">Accept</a>
+          <a class="button">Decline</a>
         </div>
-      </div>
-      <div class="button-bar">
-        <a class="button">Accept</a>
-        <a class="button">Decline</a>
-      </div>
-    </div>
-
-    <div class="list card">
-      <div class="item item-divider">Challenge from Justin</div>
-      <div class="item item-body">
-        <div>
-          Justin challenges you to Segment Z
-        </div>
-      </div>
-      <div class="button-bar">
-        <a class="button">Accept</a>
-        <a class="button">Decline</a>
-      </div>
-    </div>
-
-    <div class="list card">
-      <div class="item item-divider">Challenge from Shan</div>
-      <div class="item item-body">
-        <div>
-          Shan challenges you to Segment A
-        </div>
-      </div>
-      <div class="button-bar">
-        <a class="button">Accept</a>
-        <a class="button">Decline</a>
       </div>
     </div>
   
