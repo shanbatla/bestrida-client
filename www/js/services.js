@@ -8,27 +8,27 @@ angular.module('starter.services', [])
     id: 0,
     name: 'AJ Mullins',
     lastText: 'Challenged you to Segment X',
-    face: 'img/ben.png'
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 1,
     name: 'David Lee',
     lastText: 'Challenged you to Segment Y',
-    face: 'img/max.png'
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 2,
     name: 'Justin Zimmerman',
     lastText: 'Challenged you to Segment Z',
-    face: 'img/adam.jpg'
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 3,
     name: 'Shan Batla',
     lastText: 'Challenged you to Segment A',
-    face: 'img/perry.png'
+    face: 'img/strava_profile_pic.png'
   }, {
     id: 4,
     name: 'Nick Balestra',
     lastText: 'Challenged you to Segment B',
-    face: 'img/mike.png'
+    face: 'img/strava_profile_pic.png'
   }];
 
   return {
