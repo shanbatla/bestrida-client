@@ -61,6 +61,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  // set up completed challenge state
+  .state('tab.completed-challenges', {
+    url: '/completed-challenges',
+    views: {
+      'completed-challenges': {
+        templateUrl: 'templates/completed-challenges.html',
+        controller: 'CompleteCtrl'
+      }
+    }
+  })
+
   .state('tab.chats', {
       url: '/chats',
       views: {
@@ -102,31 +113,36 @@ var mockChallengers = [
       id: 0, 
       name: "AJ Mullins", 
       segment: "X",
-      face: 'img/strava_profile_pic.png'
+      face: 'img/strava_profile_pic.png',
+      result: "won"
     },
     {
       id: 1, 
       name: "Dave Lee", 
       segment: "Y",
-      face: 'img/strava_profile_pic.png'
+      face: 'img/strava_profile_pic.png',
+      result: "lost"
     },
     {
       id: 2, 
       name: "Justin Zimmerman", 
       segment: "Z",
-      face: 'img/strava_profile_pic.png'
+      face: 'img/strava_profile_pic.png',
+      result: "won"
     },
     {
       id: 3, 
       name: "Shan Batla", 
       segment: "A",
-      face: 'img/strava_profile_pic.png'
+      face: 'img/strava_profile_pic.png',
+      result: "lost"
     },
     {
       id: 4, 
       name: "Nick Balestra", 
       segment: "B",
-      face: 'img/strava_profile_pic.png'
+      face: 'img/strava_profile_pic.png', 
+      result: "won"
     }
   ];
 
