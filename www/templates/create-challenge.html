@@ -1,7 +1,7 @@
 <ion-view view-title="Create Challenge">
   <ion-content class="padding">
 
-    <!-- Accept chalenge button -->
+    <!-- Search for 'friends' and 'followers' to challenge. Will only work if you are currently connected on Strava -->
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
@@ -9,21 +9,23 @@
       </label>
     </div>
 
+    <!-- Display list of all 'friends' and 'followers' to challege -->
     <div class="list">
-      <div class="item item-divider">
-        Recent Challengers
-      </div>
-      <a class="item" href="#">
-        Justin Zimmerman
-      </a>
-      <a class="item" href="#">
-        David Lee
-      </a>
-      <a class="item" href="#">
-        Shan Balta
-      </a>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Select Challenger
+        </div>
+        <select>
+        <!-- look into using ng-options instead && create ng-model -->
+        <!-- consider only displaying the 3 - 5 most recent challengers otherwise the list might get unreasonably large -->
+          <option ng-repeat="challenger in challengers">{{challenger.name}}</option>
+        </select>
+      </label>
+
     </div>
 
+    <!-- Search for segments (not sure exactly how this is going to work - by geolocation? by city && state) -->
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
@@ -31,26 +33,28 @@
       </label>
     </div>
 
+    <!-- Display list of all past segments -->
     <div class="list">
-      <div class="item item-divider">
-        Recent Segments
-      </div>
-      <a class="item" href="#">
-        Walnut Creek Main Street
-      </a>
-      <a class="item" href="#">
-        Memory Grove Sprint
-      </a>
-      <a class="item" href="#">
-        Western Port Wall
-      </a>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Select Segment
+        </div>
+        <select>
+        <!-- look into using ng-options instead && create ng-model -->
+        <!-- consider only displaying the 3 - 5 most recent segments otherwise the list might get unreasonably large -->
+          <option ng-repeat="segment in segments track by $index">{{segment}}</option>
+        </select>
+      </label>
+
     </div>
 
     <label class="item item-input">
-      <span class="input-label">Date</span>
+      <span class="input-label">D-Date</span>
       <input type="date">
     </label>
 
+    <!-- Accept challenge button should only be active when (challenger - segment - date) have been populated -->
     <button class="button button-block button-assertive">
       Create Challenge
     </button>
