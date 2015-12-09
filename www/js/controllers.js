@@ -36,7 +36,7 @@ angular.module('starter.controllers', [])
   $scope.segments = mockSegments;
 })
 
-.controller('CompleteCtrl', function($scope) {
+.controller('CompletedCtrl', function($scope) {
   $scope.challengers = mockChallengers;
   $scope.segments = mockSegments;
 });

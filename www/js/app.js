@@ -67,7 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'completed-challenges': {
         templateUrl: 'templates/completed-challenges.html',
-        controller: 'CompleteCtrl'
+        controller: 'CompletedCtrl'
       }
     }
   })
