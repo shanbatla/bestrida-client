@@ -94,3 +94,41 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/challenge-feed');
 
 });
+
+
+//Mock Data
+var mockChallengers = [
+    {
+      id: 0, 
+      name: "AJ Mullins", 
+      segment: "X",
+      face: 'img/strava_profile_pic.png'
+    },
+    {
+      id: 1, 
+      name: "Dave Lee", 
+      segment: "Y",
+      face: 'img/strava_profile_pic.png'
+    },
+    {
+      id: 2, 
+      name: "Justin Zimmerman", 
+      segment: "Z",
+      face: 'img/strava_profile_pic.png'
+    },
+    {
+      id: 3, 
+      name: "Shan Batla", 
+      segment: "A",
+      face: 'img/strava_profile_pic.png'
+    },
+    {
+      id: 4, 
+      name: "Nick Balestra", 
+      segment: "B",
+      face: 'img/strava_profile_pic.png'
+    }
+  ];
+
+
+
