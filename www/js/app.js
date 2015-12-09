@@ -156,10 +156,10 @@ var mockChallengers = [
   ];
 
 var mockSegments = [
-"Walnut Creek Main St", 
-"Memory Grove Sprint", 
-"Western Port Wall", 
-"Cactus Run Downhill",
-"Mustard Run"
+  "Walnut Creek Main St", 
+  "Memory Grove Sprint", 
+  "Western Port Wall", 
+  "Cactus Run Downhill",
+  "Mustard Run"
 ];
 
