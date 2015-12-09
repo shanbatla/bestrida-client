@@ -31,6 +31,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('CreateCtrl', function() {
-
+.controller('CreateCtrl', function($scope) {
+  $scope.challengers = mockChallengers;
+  $scope.segments = mockSegments;
 });
