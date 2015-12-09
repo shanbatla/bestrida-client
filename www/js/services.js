@@ -1,35 +1,10 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('ActiveChallenges', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'AJ Mullins',
-    lastText: 'Challenged you to Segment X',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'David Lee',
-    lastText: 'Challenged you to Segment Y',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Justin Zimmerman',
-    lastText: 'Challenged you to Segment Z',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Shan Batla',
-    lastText: 'Challenged you to Segment A',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Nick Balestra',
-    lastText: 'Challenged you to Segment B',
-    face: 'img/mike.png'
-  }];
+  var chats = mockChallengers;
 
   return {
     all: function() {
