@@ -5,8 +5,15 @@
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search for a challenger">
+        <!-- <input type="text" placeholder="Search for a challenger"> -->
+        <input type="text" placeholder="Search for a challenger" ng-model="searchChallenger">
       </label>
+
+      <table id="searchChallengerResults">
+        <tr ng-show="searchChallenger" ng-repeat="challenger in challengers | filter:searchChallenger">
+          <td><option>{{challenger.name}}</option></td>
+        </tr>
+      </table>
     </div>
 
     <!-- Display list of all 'friends' and 'followers' to challege -->
@@ -55,9 +62,13 @@
     </label>
 
     <!-- Accept challenge button should only be active when (challenger - segment - date) have been populated -->
-    <button class="button button-block button-assertive">
+    <a href="#/tab/chats" class="button button-block button-assertive">
       Create Challenge
-    </button>
+    </a>
+    <!-- TODO: Fix the button below to function like the button above  -->
+    <!-- <button  class="button button-block button-assertive" href="#/tab/chats">
+      Create Challenge
+    </button> -->
 
   </ion-content>
 </ion-view>
