@@ -61,13 +61,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  // set up completed challenge state
+  // set up completed challenge state and challenge stats state
   .state('tab.completed-challenges', {
     url: '/completed-challenges',
     views: {
       'completed-challenges': {
         templateUrl: 'templates/completed-challenges.html',
         controller: 'CompletedCtrl'
+      }
+    }
+  })
+  .state('tab.challenge-stats', {
+    url: '/challenge-stats',
+    views: {
+      'completed-challenges': {
+        templateUrl: 'templates/challenge-stats.html',
+        controller: 'ChallengeStatsCtrl'
       }
     }
   })
@@ -147,10 +156,10 @@ var mockChallengers = [
   ];
 
 var mockSegments = [
-"Walnut Creek Main St", 
-"Memory Grove Sprint", 
-"Western Port Wall", 
-"Cactus Run Downhill",
-"Mustard Run"
+  "Walnut Creek Main St", 
+  "Memory Grove Sprint", 
+  "Western Port Wall", 
+  "Cactus Run Downhill",
+  "Mustard Run"
 ];
 

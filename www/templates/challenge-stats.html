@@ -1,0 +1,77 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+
+<!-- Old code -->
+<!-- <ion-view view-title="{{chat.name}}">
+  <ion-content class="padding">
+    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+    <p>
+      Challenged you to Segment {{chat.segment}}
+    </p>
+  </ion-content>
+</ion-view> -->
+
+<ion-view view-title="Challenge Stats">
+  <ion-content class="padding">
+    
+    <!-- Segment - name -->
+    <div class="row">
+      <div class="col.col-100 center-align">
+        <h1>Segment X</h1>
+      </div>
+    </div>
+
+    <!-- Segment - distance -->
+    <div class="row">
+      <div class="col.col-100 center-align">
+        <h3>5 Miles</h3>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="row">
+      <div class="col.col-100 center-align">
+        <h3>You Won!</h3>
+      </div>
+    </div>
+
+    <!-- Opponents -->
+    <div class="row">
+      <div class="col">
+        <h3>John Doe</h3>
+      </div>
+      <div class="col">
+        <h3>AJ Mullins</h3>
+      </div>
+    </div>
+
+    <!-- Time -->
+    <div class="row">
+      <div class="col">
+        <h4>Time</h4>
+        <p>00:15:00</p>
+      </div>
+      <div class="col">
+        <h4>Time</h4>
+        <p>00:20:00</p>
+      </div>
+    </div>
+
+    <!-- Speed -->
+    <div class="row">
+      <div class="col">
+        <h4>Speed</h4>
+        <p>25 MPH</p>
+      </div>
+      <div class="col">
+        <h4>Speed</h4>
+        <p>20 MPH</p>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
