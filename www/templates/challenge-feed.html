@@ -1,10 +1,15 @@
 <ion-view view-title="Challenge Feed">
   <ion-content class="padding">
 
-    <!-- Accept chalenge button -->
-    <button class="button button-block button-assertive">
+    <!-- Create challenge button -->
+    <a href="#/tab/create-challenge" class="button button-block button-assertive">
       Create Challenge
-    </button>
+    </a>
+
+    <!-- This button does not work - why? -->
+    <!-- <button class="button button-block button-assertive" href="#/tab/create-challenge">
+      Create Challenge
+    </button> -->
 
     <!-- Challenge feed with list card -->
     <div ng-repeat="challenger in challengers">
