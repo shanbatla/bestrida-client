@@ -16,13 +16,13 @@ angular.module('starter.controllers', [])
   //});
 
   $scope.challengers = ActiveChallenges.all();
-  $scope.remove = function(chat) {
-    ActiveChallenges.remove(chat);
+  $scope.remove = function(challenger) {
+    ActiveChallenges.remove(challenger);
   };
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, ActiveChallenges) {
-  $scope.chat = ActiveChallenges.get($stateParams.chatId);
+  $scope.challenger = ActiveChallenges.get($stateParams.challengerID);
 })
 
 .controller('AccountCtrl', function($scope) {
@@ -42,5 +42,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChallengeStatsCtrl', function($scope) {
-  console.log("clicked")
+  
 });
