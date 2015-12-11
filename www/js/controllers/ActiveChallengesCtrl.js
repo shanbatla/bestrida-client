@@ -1,4 +1,4 @@
-angular.module('activechallenges', [])
+angular.module('activechallengesctrl', [])
 
 .controller('ActiveChallengesCtrl', function($scope, ActiveChallenges) {
   // With the new view caching in Ionic, Controllers are only called

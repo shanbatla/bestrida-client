@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('activechallengesservice', [])
 
 .factory('ActiveChallenges', function() {
   // Might use a resource here that returns a JSON array
