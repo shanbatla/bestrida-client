@@ -20,10 +20,10 @@ angular.module('starter.controllers', [])
 //   };
 // })
 
-.controller('TailofTheTapeCtrl', function($scope, $stateParams, ActiveChallenges) {
-  $scope.challenger = ActiveChallenges.get($stateParams.challengerID);
-  console.log("tale of the tape ctrl");
-})
+// .controller('TailofTheTapeCtrl', function($scope, $stateParams, ActiveChallenges) {
+//   $scope.challenger = ActiveChallenges.get($stateParams.challengerID);
+//   console.log("tale of the tape ctrl");
+// })
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
