@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, ActiveChallenges) {
+.controller('ActiveChallengeCtrl', function($scope, $stateParams, ActiveChallenges) {
   $scope.challenger = ActiveChallenges.get($stateParams.challengerID);
 })
 
