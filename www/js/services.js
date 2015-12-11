@@ -10,12 +10,12 @@ angular.module('starter.services', [])
     all: function() {
       return challengers;
     },
-    remove: function(chat) {
-      challengers.splice(challengers.indexOf(chat), 1);
+    remove: function(challenger) {
+      challengers.splice(challengers.indexOf(challenger), 1);
     },
-    get: function(chatId) {
+    get: function(challengerID) {
       for (var i = 0; i < challengers.length; i++) {
-        if (challengers[i].id === parseInt(chatId)) {
+        if (challengers[i].id === parseInt(challengerID)) {
           return challengers[i];
         }
       }
