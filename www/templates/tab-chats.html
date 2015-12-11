@@ -1,13 +1,13 @@
 <ion-view view-title="Active Challenges">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in challengers" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>Challenged you to Segment {{chat.segment}}</p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="challenger in challengers" type="item-text-wrap" href="#/tab/chats/{{challenger.id}}">
+        <img ng-src="{{challenger.face}}">
+        <h2>{{challenger.name}}</h2>
+        <p>Challenged you to Segment {{challenger.segment}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+        <ion-option-button class="button-assertive" ng-click="remove(challenger)">
           Challenge Complete
         </ion-option-button>
       </ion-item>
