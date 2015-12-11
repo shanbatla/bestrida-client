@@ -4,19 +4,19 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = mockChallengers;
+  var challengers = mockChallengers;
 
   return {
     all: function() {
-      return chats;
+      return challengers;
     },
     remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+      challengers.splice(challengers.indexOf(chat), 1);
     },
     get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+      for (var i = 0; i < challengers.length; i++) {
+        if (challengers[i].id === parseInt(chatId)) {
+          return challengers[i];
         }
       }
       return null;

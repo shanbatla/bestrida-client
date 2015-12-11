@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.chats = ActiveChallenges.all();
+  $scope.challengers = ActiveChallenges.all();
   $scope.remove = function(chat) {
     ActiveChallenges.remove(chat);
   };
