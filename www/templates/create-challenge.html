@@ -1,74 +1,48 @@
 <ion-view view-title="Create Challenge">
   <ion-content class="padding">
 
-    <!-- Search for 'friends' and 'followers' to challenge. Will only work if you are currently connected on Strava -->
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <!-- <input type="text" placeholder="Search for a challenger"> -->
-        <input type="text" placeholder="Search for a challenger" ng-model="searchChallenger">
-      </label>
+    <div ng-controller="CreateCtrl">
 
-      <table id="searchChallengerResults">
-        <tr ng-show="searchChallenger" ng-repeat="challenger in challengers | filter:searchChallenger">
-          <td><option>{{challenger.name}}</option></td>
-        </tr>
-      </table>
-    </div>
+      <!-- CHALLENGER SELECTOR -->
 
-    <!-- Display list of all 'friends' and 'followers' to challege -->
-    <div class="list">
+      <div>
+        <div class="item item-divider">Select a Challenger</div>
+        <ion-select label="Select a Challenger" label-field="name" label-field1="count" provider="challengers"  ng-model="challenger"/>
+      </div>
 
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Select Challenger
-        </div>
-        <select>
-        <!-- look into using ng-options instead && create ng-model -->
-        <!-- consider only displaying the 3 - 5 most recent challengers otherwise the list might get unreasonably large -->
-          <option ng-repeat="challenger in challengers">{{challenger.name}}</option>
-        </select>
-      </label>
+      <br>
 
-    </div>
+      <!-- SEGMENT SELECTOR -->
 
-    <!-- Search for segments (not sure exactly how this is going to work - by geolocation? by city && state) -->
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search for a segment">
-      </label>
-    </div>
+      <div>
+        <div class="item item-divider">Select a Segment</div>
+        <ion-select label="Select a segment" label-field="segment" label-field1="count" provider="segments"  ng-model="segment"/>
+      </div>
 
-    <!-- Display list of all past segments -->
-    <div class="list">
+      <br>
 
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Select Segment
-        </div>
-        <select>
-        <!-- look into using ng-options instead && create ng-model -->
-        <!-- consider only displaying the 3 - 5 most recent segments otherwise the list might get unreasonably large -->
-          <option ng-repeat="segment in segments track by $index">{{segment}}</option>
-        </select>
-      </label>
+      <!-- DATE SELECTOR -->
 
-    </div>
+      <div>
+        <div class="item item-divider">Select a Completion Date</div>
+        <label class="item item-input">
+          <span class="input-label">D-Date</span>
+          <input type="date">
+        </label>
+      </div>
+      
+      <br>
 
-    <label class="item item-input">
-      <span class="input-label">D-Date</span>
-      <input type="date">
-    </label>
-
-    <!-- Accept challenge button should only be active when (challenger - segment - date) have been populated -->
-    <a href="#/tab/active-challenges" class="button button-block button-assertive">
+      <!-- TODO: Change button to enable once all fields have been filled out (ngDisabled). Currently the button is not visible until all fields have been filled out which might cause confusion -->
+      <a href="#/tab/active-challenges" class="button button-block button-assertive" ng-click="test()" ng-show="challenger && segment">
       Create Challenge
-    </a>
-    <!-- TODO: Fix the button below to function like the button above  -->
-    <!-- <button  class="button button-block button-assertive" href="#/tab/chats">
+      </a>
+
+      <!-- <a href="#/tab/active-challenges" class="button button-block button-assertive">
       Create Challenge
-    </button> -->
+      </a> -->
+
+    </div>
 
   </ion-content>
 </ion-view>
