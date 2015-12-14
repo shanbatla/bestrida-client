@@ -1,9 +1,12 @@
 angular.module('auth', [])
 
 .controller('AuthCtrl', function($scope) {
-    // $scope.data = {};
+
+    $scope.data = {};
  
-    // $scope.login = function() {
-    //     console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
-    // }
+    $scope.login = function() {
+      console.log("username: " + $scope.data.username + " and password: " + $scope.data.password);
+      window.open('http://bestrida.herokuapp.com/api/register', '_blank', 'location=yes');
+    }
+
 })
