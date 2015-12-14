@@ -37,7 +37,7 @@ angular.module('create', [])
       '<div class="item item-input-inset">'
         +'<label class="item-input-wrapper">'
           +'<i class="icon ion-search placeholder-icon"></i>'
-          +'<input id="filter" type="search"  ng-model="ngModel" ng-value="ngValue" ng-keydown="onKeyDown()"/>'
+          +'<input id="filter" type="search"  ng-model="ngModel" ng-value="ngValue" ng-keydown="onKeyDown()" required />'
         +'</label>'
         +'<button class="button button-small button-clear" ng-model="ngModel" ng-click="open()">'
           +'<i class="icon ion-chevron-down"></i>'
