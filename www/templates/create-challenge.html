@@ -16,7 +16,7 @@
 
       <div>
         <div class="item item-divider">Select a Segment</div>
-        <ion-select label="Select a segment" label-field="segment" label-field1="count" provider="segments"  ng-model="segment"/>
+        <ion-select label="Select a segment" label-field="segmentName" label-field1="count" provider="segments"  ng-model="segment"/>
       </div>
 
       <br>
@@ -26,22 +26,23 @@
       <div>
         <div class="item item-divider">Select a Completion Date</div>
         <label class="item item-input">
-          <span class="input-label">D-Date</span>
-          <input type="date">
+          <span class="input-label">Date</span>
+          <input type="date" ng-model="date" required />
         </label>
       </div>
       
       <br>
 
-      <!-- TODO: Change button to enable once all fields have been filled out (ngDisabled). Currently the button is not visible until all fields have been filled out which might cause confusion -->
-      <a href="#/tab/active-challenges" class="button button-block button-assertive" ng-click="test()" ng-show="challenger && segment">
-      Create Challenge
-      </a>
+      <button class="button button-block button-assertive" ng-disabled="!(segment.segmentName && challenger.name && date)" ng-click="test()">Create Challenge</button>
 
-      <!-- <a href="#/tab/active-challenges" class="button button-block button-assertive">
+      <!-- DELETE BELOW BEFORE DEPLOYING - reference code -->
+
+     <!--  <a href="#/tab/active-challenges" class="button button-block button-assertive" ng-click="test()" ng-show="challenger && segment">
       Create Challenge
       </a> -->
 
+      <!-- DELETE ABOVE BEFORE DEPLOYING -->
+     
     </div>
 
   </ion-content>

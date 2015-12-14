@@ -120,47 +120,72 @@ angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'a
 //Mock Data
 var mockChallengers = [
     {
-      id: 0, 
+      challengeeId: 0, 
       name: "AJ Mullins", 
       segment: "X",
       face: 'img/strava_profile_pic.png',
-      result: "won"
+      result: "won",
+      count: 2
     },
     {
-      id: 1, 
+      challengeeId: 1, 
       name: "Dave Lee", 
       segment: "Y",
       face: 'img/strava_profile_pic.png',
-      result: "lost"
+      result: "lost",
+      count: 1
     },
     {
-      id: 2, 
+      challengeeId: 2, 
       name: "Justin Zimmerman", 
       segment: "Z",
       face: 'img/strava_profile_pic.png',
-      result: "won"
+      result: "won",
+      count: 8
     },
     {
-      id: 3, 
+      challengeeId: 3, 
       name: "Shan Batla", 
       segment: "A",
       face: 'img/strava_profile_pic.png',
-      result: "lost"
+      result: "lost",
+      count: 4
     },
     {
-      id: 4, 
+      challengeeId: 4, 
       name: "Nick Balestra", 
       segment: "B",
       face: 'img/strava_profile_pic.png', 
-      result: "won"
+      result: "won",
+      count: 15
     }
   ];
 
 var mockSegments = [
-  "Walnut Creek Main St", 
-  "Memory Grove Sprint", 
-  "Western Port Wall", 
-  "Cactus Run Downhill",
-  "Mustard Run"
-];
+    {
+      segmentId: 0, 
+      segmentName: "Walnut Creek Main St",
+      count: 5
+    },
+    {
+      segmentId: 1, 
+      segmentName: "Memory Grove Sprint",
+      count: 25
+    },
+    {
+      segmentId: 2,
+      segmentName: "Western Port Wall",
+      count: 10
+    },
+    {
+      segmentId: 3,
+      segmentName: "Cactus Run Downhill",
+      count: 15
+    },
+    {
+      segmentId: 4, 
+      segmentName: "Mustard Run",
+      count: 1
+    }
+  ];
 
