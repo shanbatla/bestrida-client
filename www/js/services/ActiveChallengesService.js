@@ -26,8 +26,11 @@ angular.module('activechallengesservice', [])
 
  .factory('CreateFct', ['$http', function($http) {
     return {
-      create: function(data) {
+      createChallenge: function(data) {
         return $http.post('http://bestrida.herokuapp.com/api/challenges/create', data);
+      },
+      getUsers: function() {
+        return $http.get('http://bestrida.herokuapp.com/api/users/');
       }
     }
 }]);

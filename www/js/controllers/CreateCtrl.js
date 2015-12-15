@@ -1,24 +1,31 @@
 angular.module('create', [])
 
-.controller('CreateCtrl', ['$scope', 'CreateFct', function($scope, CreateFct) {
+.controller('CreateCtrl', ['$scope', '$http', 'CreateFct', function($scope, $http, CreateFct) {
 
-  // mock data - challengers
-  $scope.challengers = mockChallengers;
+  // Load registered user data when navigating to the create challenge page
+    // NOTE: This currently displays all registered users - consider displaying friends and followers of current user instead
+  CreateFct.getUsers()
+    .success(function(data) {
+      $scope.challengers = data;
+    });
+
   // mock data - segments
   $scope.segments = mockSegments;
 
-  // create challenge post request
-  $scope.create = function() {
+  
+  // Create Challenge - Triggered when 'create challenge' button is clicked
+    // creates data object from user input and then calls factory create method where the post reqeust lives
+  $scope.createChallenge = function() {
     var data = {
       segmentId: $scope.segment.segmentId,
       segmentName: $scope.segment.segmentName,
       // TODO: Figure out how to pull the challengerId - currently hard coded
       challengerId: 6274388,
-      challengeeId: $scope.challenger.challengeeId,
+      challengeeId: $scope.challenger._id,
       // Placeholder until the backend can accept date
       // completionDate: $scope.date
     }
-    CreateFct.create(data);
+    CreateFct.createChallenge(data);
   }
 
 }])
@@ -56,7 +63,7 @@ angular.module('create', [])
       +'<div class="optionList padding-left padding-right" ng-hide="showHides">'
         // +'<ion-scroll>'
           +'<ul class="list">'
-            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | orderBy: labelField1 | limitTo:3">{{item[labelField]}} - count {{item[labelField1]}}</li>'
+            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | orderBy: labelField1 | limitTo:3">{{item[labelField]}}</li>'
           +'</ul>'
         // +'</ion-scroll>'
       +'</div>'
@@ -64,14 +71,14 @@ angular.module('create', [])
       +'<div class="optionList padding-left padding-right" ng-show="showHide">'
         // +'<ion-scroll>'
           +'<ul class="list">'
-            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | filter:ngModel">{{item[labelField]}} - count {{item[labelField1]}}</li>'
+            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | filter:ngModel">{{item[labelField]}}</li>'
           +'</ul>'
         // +'</ion-scroll>'
       +'</div>',
 
     link: function (scope, element, attrs, ngModel) {
       scope.ngValue = scope.ngValue !== undefined ? scope.ngValue :'item';
-      
+
       scope.select = function(item){
         ngModel.$setViewValue(item);
         scope.showHide = false;
