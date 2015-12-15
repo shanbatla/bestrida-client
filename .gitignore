@@ -6,4 +6,4 @@ platforms/
 plugins/
 
 ## API keys
-config.js
+www/config.js

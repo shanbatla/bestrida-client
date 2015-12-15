@@ -22,5 +22,5 @@
     <param name="ios-package" value="CDVInAppBrowser" />
   </feature>
   <!-- Allow links to example.com -->
-  <allow-navigation href="http://example.com/*" />
+  <allow-navigation href="http://bestrida.herokuapp.com/api/register" />
 </widget>
