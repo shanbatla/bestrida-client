@@ -22,4 +22,12 @@ angular.module('activechallengesservice', [])
       return null;
     }
   };
-});
+})
+
+ .factory('CreateFct', ['$http', function($http) {
+    return {
+      create: function(data) {
+        return $http.post('http://bestrida.herokuapp.com/api/challenges/create', data);
+      }
+    }
+}]);

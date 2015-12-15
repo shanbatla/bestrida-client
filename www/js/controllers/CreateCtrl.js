@@ -1,19 +1,28 @@
 angular.module('create', [])
 
-.controller('CreateCtrl', ['$scope', function($scope) {
+.controller('CreateCtrl', ['$scope', 'CreateFct', function($scope, CreateFct) {
+
+  // mock data - challengers
   $scope.challengers = mockChallengers;
+  // mock data - segments
   $scope.segments = mockSegments;
 
-  // DELETE BELOW BEFORE DEPLOYING-> FOR TESTING PURPOSES
-  $scope.test = function() {
-    alert('Challenge successfully created')
-    // alert($scope.challenger.name);
+  // create challenge post request
+  $scope.create = function() {
+    var data = {
+      segmentId: $scope.segment.segmentId,
+      segmentName: $scope.segment.segmentName,
+      // TODO: Figure out how to pull the challengerId - currently hard coded
+      challengerId: 6274388,
+      challengeeId: $scope.challenger.challengeeId,
+      // Placeholder until the backend can accept date
+      // completionDate: $scope.date
+    }
+    CreateFct.create(data);
   }
-  // DELETE ABOVE BEFORE DEPLOYING -> FOR TESTING PURPOSES
+
 }])
 
-// TODO: Decouple and move to directives folder
-// Select Challenger Directive
 .directive('ionSelect', function() {
   'use strict';
   return{
