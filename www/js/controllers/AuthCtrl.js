@@ -16,8 +16,15 @@ angular.module('auth', ['ngCordovaOauth'])
       //   console.log('In app browser closed');
       // });
 
-      $cordovaOauth.strava(clientID, clientSecret, ['view_private']).then(function(result) {
-        console.log(result);
+      $cordovaOauth.strava(clientID, clientSecret, ['view_private']).then(function(response) {
+        //if response is truthy, redirect to challenge feed
+        if (response) {
+          //redirect to challenge feed
+          console.log("login success");
+        } else {
+          //keep user in login
+          console.log("login fail");
+        }
       }, function(error) {
         console.log(error);
       });   
