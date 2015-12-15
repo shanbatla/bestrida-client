@@ -17,7 +17,7 @@ angular.module('auth', ['ngCordovaOauth'])
         if((event.url).startsWith("http://localhost/callback")) {
           requestToken = (event.url).split("code=")[1];
           ref.close();
-          $state.transitionTo('tab.challenge-feed');
+          $state.go('tab.challenge-feed');
         }
       });
 
