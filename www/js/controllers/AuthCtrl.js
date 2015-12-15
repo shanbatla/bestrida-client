@@ -1,6 +1,6 @@
 angular.module('auth', ['ngCordovaOauth'])
 
-.controller('AuthCtrl', function($scope, $http, $location, $state, $cordovaOauth) {
+.controller('AuthCtrl', function($scope, $rootScope, $http, $location, $state, $cordovaOauth) {
     
     window.cordovaOauth = $cordovaOauth;
     window.http = $http;
@@ -11,13 +11,14 @@ angular.module('auth', ['ngCordovaOauth'])
       // console.log("username: " + $scope.data.username + " and password: " + $scope.data.password);
       
       // Opens new in app window
-      var ref = window.open('http://bestrida.herokuapp.com/api/register', '_blank', 'location=yes');
+      // var ref = window.open('http://bestrida.herokuapp.com/api/register', '_blank', 'location=yes');
       var ref = window.open('https://www.strava.com/oauth/authorize?' + 'client_id=' + clientID + '&response_type=code' + '&redirect_uri=http://localhost/callback ', '_blank', 'location=yes');
       ref.addEventListener('loadstart', function(event) { 
         if((event.url).startsWith("http://localhost/callback")) {
           requestToken = (event.url).split("code=")[1];
           ref.close();
           $state.go('tab.challenge-feed');
+          alert(requestToken);
         }
       });
 
