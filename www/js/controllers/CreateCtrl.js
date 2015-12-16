@@ -9,16 +9,20 @@ angular.module('create', [])
       $scope.challengers = data;
     });
 
-  // mock data - segments
-  $scope.segments = mockSegments;
+  // Load segment data when navigating to the create challenge page
+    // NOTE: This currently displays all segments for every registered user - consider displaying segments of only the current user instead
+  CreateFct.getSegments()
+    .success(function(data) {
+      $scope.segments = data;
+    })
 
   
   // Create Challenge - Triggered when 'create challenge' button is clicked
     // creates data object from user input and then calls factory create method where the post reqeust lives
   $scope.createChallenge = function() {
     var data = {
-      segmentId: $scope.segment.segmentId,
-      segmentName: $scope.segment.segmentName,
+      segmentId: $scope.segment._id,
+      segmentName: $scope.segment.name,
       // TODO: Figure out how to pull the challengerId - currently hard coded
       challengerId: 6274388,
       challengeeId: $scope.challenger._id,

@@ -31,6 +31,9 @@ angular.module('activechallengesservice', [])
       },
       getUsers: function() {
         return $http.get('http://bestrida.herokuapp.com/api/users/');
+      },
+      getSegments: function() {
+        return $http.get('http://bestrida.herokuapp.com/api/segments/');
       }
     }
 }]);
