@@ -17,4 +17,10 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <!-- add in-app browser plugin for cordova -->
+  <feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser" />
+  </feature>
+  <!-- Allow links to example.com -->
+  <allow-navigation href="http://bestrida.herokuapp.com/api/register" />
 </widget>
