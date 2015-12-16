@@ -17,7 +17,8 @@
 
       <div>
         <div class="item item-divider">Select a Segment</div>
-        <ion-select label="Select a segment" label-field="segmentName" label-field1="count" provider="segments"  ng-model="segment"/>
+        <!-- had to change label-field1 to reference a different attribute as count does not currently exist in our users DB -->
+        <ion-select label="Select a segment" label-field="name" label-field1="name" provider="segments"  ng-model="segment"/>
       </div>
 
       <br>
@@ -34,7 +35,7 @@
       
       <br>
 
-      <button class="button button-block button-assertive" ng-disabled="!(segment.segmentName && challenger.fullName && date)" ng-click="createChallenge()">Create Challenge</button>
+      <button class="button button-block button-assertive" ng-disabled="!(segment.name && challenger.fullName && date)" ng-click="createChallenge()">Create Challenge</button>
 
       <!-- DELETE BELOW BEFORE DEPLOYING - reference code -->
 
