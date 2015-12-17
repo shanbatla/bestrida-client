@@ -7,3 +7,6 @@ plugins/
 
 ## API keys
 www/config.js
+
+## Libraries
+www/lib
