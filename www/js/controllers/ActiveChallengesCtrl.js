@@ -23,11 +23,12 @@ angular.module('activechallengesctrl', [])
 
 });
 
-//data from server
+// data from server
 // [
 //   {
 //     "_id":"566f63a5bb602d030004c8c5",
-//     "segmentId":0,"segmentName":"Walnut Creek Main St",
+//     "segmentId":0,
+//     "segmentName":"Walnut Creek Main St",
 //     "challengerId":6274388,
 //     "challengeeId":1027935,
 //     "challengerName":"Ash Ketchum",
