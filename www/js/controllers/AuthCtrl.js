@@ -23,9 +23,7 @@ angular.module('auth', ['ngCordovaOauth'])
             url: 'https://www.strava.com/oauth/token?' + 'client_id=' + clientID + '&client_secret=' + clientSecret + '&code=' + code
           })
             .then(function (response) {
-              alert(response.data.athlete.id);
-              alert(response.data.athlete.firstname);
-              alert(response.data.athlete.lastname);
+              $rootScope.user = response.data;
             }, function (error) {
               alert(error);
           });  
