@@ -24,16 +24,25 @@ angular.module('activechallengesservice', [])
   };
 })
 
- .factory('CreateFct', ['$http', function($http) {
-    return {
-      createChallenge: function(data) {
-        return $http.post('http://bestrida.herokuapp.com/api/challenges/create', data);
-      },
-      getUsers: function() {
-        return $http.get('http://bestrida.herokuapp.com/api/users/');
-      },
-      getSegments: function() {
-        return $http.get('http://bestrida.herokuapp.com/api/segments/');
-      }
+.factory('CreateFct', ['$http', function($http) {
+  return {
+    createChallenge: function(data) {
+      return $http.post('http://bestrida.herokuapp.com/api/challenges/create', data);
+    },
+    getUsers: function() {
+      return $http.get('http://bestrida.herokuapp.com/api/users/');
+    },
+    getSegments: function() {
+      return $http.get('http://bestrida.herokuapp.com/api/segments/');
     }
+  }
+}])
+
+.factory('ActiveChallengesFct', ['$http', function($http) {
+  return {
+    getActiveChallenges: function() {
+      //currently getting the challenges for user 6274388
+      return $http.get('http://bestrida.herokuapp.com/api/challenges/active/6274388');
+    }
+  }
 }]);
