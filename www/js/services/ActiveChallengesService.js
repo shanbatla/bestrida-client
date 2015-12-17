@@ -13,6 +13,10 @@ angular.module('activechallengesservice', [])
     remove: function(challenger) {
       challengers.splice(challengers.indexOf(challenger), 1);
     },
+    removeActiveChallenge: function(activeChallenge) {
+      // challengers.splice(challengers.indexOf(challenger), 1);
+      console.log("clicked");
+    },
     get: function(challengerID) {
       for (var i = 0; i < challengers.length; i++) {
         if (challengers[i].id === parseInt(challengerID)) {

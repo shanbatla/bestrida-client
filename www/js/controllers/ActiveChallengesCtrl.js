@@ -9,17 +9,21 @@ angular.module('activechallengesctrl', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  //Removes users from tab
-  $scope.challengers = ActiveChallenges.all();
-  $scope.remove = function(challenger) {
-    ActiveChallenges.remove(challenger);
-  };
-
   ActiveChallengesFct.getActiveChallenges()
     .success(function(data) {
       $scope.activeChallenges = data;
-      console.log($scope.activeChallenges)
     });
+  
+  // $scope.challengers = ActiveChallenges.all();
+  // $scope.remove = function(challenger) {
+  //   ActiveChallenges.remove(challenger);
+  // };
+
+  //Old Code
+  // $scope.challengers = ActiveChallenges.all();
+  // $scope.remove = function(challenger) {
+  //   ActiveChallenges.remove(challenger);
+  // };
 
 });
 
