@@ -56,4 +56,38 @@ angular.module('activechallengesservice', [])
       return $http.get('http://bestrida.herokuapp.com/api/segments/');
     }
   };
+}])
+
+.factory('AuthFct', ['$http', '$location', '$state', '$cordovaOauth', function($http, $location, $state, $cordovaOauth) {
+  var auth = {};
+  alert(auth);
+
+  auth.login = function() {
+      console.log('inside auth factory login');
+      
+      var ref = window.open('https://www.strava.com/oauth/authorize?' + 'client_id=' + clientID + '&response_type=code' + '&redirect_uri=http://localhost/callback ', '_blank', 'location=yes');
+      ref.addEventListener('loadstart', function(event) { 
+        if((event.url).startsWith("http://localhost/callback")) {
+          requestToken = (event.url).split("code=")[1];
+          var code = (event.url).split("code=")[1];
+          ref.close();
+          $state.go('tab.challenge-feed');
+
+          $http({
+            method: 'POST',
+            url: 'https://www.strava.com/oauth/token?' + 'client_id=' + clientID + '&client_secret=' + clientSecret + '&code=' + code
+          })
+            .then(function (response) {
+              auth.user = response.data;
+              alert(user.athlete.id);
+              return user;
+            }, function (error) {
+              alert(error);
+          });  
+        }
+      });
+    }
+
+    return auth;
+
 }]);

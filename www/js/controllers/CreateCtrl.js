@@ -1,6 +1,6 @@
 angular.module('create', [])
 
-.controller('CreateCtrl', ['$scope', '$http', 'CreateFct', function($scope, $http, CreateFct) {
+.controller('CreateCtrl', ['$scope', '$http', 'CreateFct', 'AuthFct', function($scope, $http, CreateFct, AuthFct) {
 
   // Load registered user data when navigating to the create challenge page
     // NOTE: This currently displays all registered users - consider displaying friends and followers of current user instead
@@ -16,7 +16,7 @@ angular.module('create', [])
       $scope.segments = data;
     })
 
-  
+  // alert(user.athlete.id);
   // Create Challenge - Triggered when 'create challenge' button is clicked
     // creates data object from user input and then calls factory create method where the post reqeust lives
   $scope.createChallenge = function() {
@@ -33,6 +33,8 @@ angular.module('create', [])
     console.log(data);
     CreateFct.createChallenge(data);
   }
+
+  $scope.user = AuthFct.user;
 
 }])
 
