@@ -14,10 +14,10 @@ angular.module('activechallengesctrl', [])
       $scope.activeChallenges = data;
     });
   
-  // $scope.challengers = ActiveChallenges.all();
-  // $scope.remove = function(challenger) {
-  //   ActiveChallenges.remove(challenger);
-  // };
+  $scope.activeChallenges = ActiveChallenges.all();
+  $scope.removeActiveChallenge = function(activeChallenge) {
+    ActiveChallengesFct.removeActiveChallenge(activeChallenge);
+  };
 
   //Old Code
   // $scope.challengers = ActiveChallenges.all();

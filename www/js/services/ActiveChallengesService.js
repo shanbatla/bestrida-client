@@ -13,10 +13,6 @@ angular.module('activechallengesservice', [])
     remove: function(challenger) {
       challengers.splice(challengers.indexOf(challenger), 1);
     },
-    removeActiveChallenge: function(activeChallenge) {
-      // challengers.splice(challengers.indexOf(challenger), 1);
-      console.log("clicked");
-    },
     get: function(challengerID) {
       for (var i = 0; i < challengers.length; i++) {
         if (challengers[i].id === parseInt(challengerID)) {
@@ -43,10 +39,23 @@ angular.module('activechallengesservice', [])
 }])
 
 .factory('ActiveChallengesFct', ['$http', function($http) {
+
   return {
     getActiveChallenges: function() {
       //currently getting the challenges for user 6274388
       return $http.get('http://bestrida.herokuapp.com/api/challenges/active/6274388');
+    },
+    removeActiveChallenge: function(activeChallenge) {
+      console.log(activeChallenge);
+      // activeChallenges.splice(activeChallenges.indexOf(activeChallenge), 1);
+      // console.log("clicked");
+
+      //data should be challenge id and user id
+      // return $http.post('', activeChallenge);
     }
   }
 }]);
+
+
+
+
