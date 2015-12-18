@@ -4,8 +4,6 @@ angular.module('auth', ['ngCordovaOauth'])
     
     // window.cordovaOauth = $cordovaOauth;
     // window.http = $http;
-
-    // $scope.data = {};
  
     $scope.login = function() {
       // console.log("username: " + $scope.data.username + " and password: " + $scope.data.password);
@@ -29,6 +27,6 @@ angular.module('auth', ['ngCordovaOauth'])
           });  
         }
       });
-    }
+    };
 
-})
+});
