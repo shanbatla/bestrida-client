@@ -43,17 +43,18 @@ angular.module('activechallengesservice', [])
   return {
     getActiveChallenges: function() {
       //currently getting the challenges for user 6274388
-      return $http.get('http://bestrida.herokuapp.com/api/challenges/active/6274388');
+      var userId = 6274388;
+      return $http.get('http://bestrida.herokuapp.com/api/challenges/active/' + userId);
     },
     removeActiveChallenge: function(activeChallenge) {
-      console.log(activeChallenge);
+      //this is the data format that the server is expecting
+      console.log(activeChallenge)
       var completeChallenge = {
         id: activeChallenge._id,
-        userID: 6274388
+        //userId will need to reflect the logged in user's id - currently hardcoded for testing purposes
+        userId: 6274388
       };
       // activeChallenges.splice(activeChallenges.indexOf(activeChallenge), 1);
-
-      //data should be challenge id and user id
       return $http.post('http://bestrida.herokuapp.com/api/challenges/complete', completeChallenge);
     }
   }

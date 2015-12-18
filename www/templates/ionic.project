@@ -1,4 +1,10 @@
-{
-  "name": "templates",
-  "app_id": "f5d1389a"
+ {
+  "name": "Bestrida",
+  "app_id": "f5d1389a",
+  "proxies": [
+    {
+      "path": "/api",
+      "options": "http://bestrida.herokuapp.com/api"
+    }
+  ]
 }

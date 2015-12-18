@@ -14,7 +14,7 @@ angular.module('activechallengesctrl', [])
       $scope.activeChallenges = data;
     });
   
-  $scope.activeChallenges = ActiveChallenges.all();
+  // $scope.activeChallenges = ActiveChallenges.all();
   $scope.removeActiveChallenge = function(activeChallenge) {
     ActiveChallengesFct.removeActiveChallenge(activeChallenge);
   };
