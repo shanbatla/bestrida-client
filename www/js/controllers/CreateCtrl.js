@@ -25,10 +25,12 @@ angular.module('create', [])
       segmentName: $scope.segment.name,
       // TODO: Figure out how to pull the challengerId - currently hard coded
       challengerId: 6274388,
+      challengerName: 'AJ Mullins',
       challengeeId: $scope.challenger._id,
-      // Placeholder until the backend can accept date
-      // completionDate: $scope.date
+      challengeeName: $scope.challenger.fullName,
+      completionDate: $scope.date
     }
+    console.log(data);
     CreateFct.createChallenge(data);
   }
 
