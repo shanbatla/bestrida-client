@@ -48,7 +48,6 @@ angular.module('activechallengesservice', [])
     },
     removeActiveChallenge: function(activeChallenge) {
       //this is the data format that the server is expecting
-      console.log(activeChallenge)
       var completeChallenge = {
         id: activeChallenge._id,
         //userId will need to reflect the logged in user's id - currently hardcoded for testing purposes
