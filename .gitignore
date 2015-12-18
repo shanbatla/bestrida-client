@@ -5,8 +5,8 @@ node_modules/
 platforms/
 plugins/
 
-## API keys
+# API keys
 www/config.js
 
-## Libraries
+# Libraries
 www/lib
