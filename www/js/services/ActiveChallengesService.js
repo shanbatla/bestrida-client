@@ -49,8 +49,8 @@ angular.module('activechallengesservice', [])
     createChallenge: function(data) {
       return $http.post('http://bestrida.herokuapp.com/api/challenges/create', data);
     },
-    getUsers: function() {
-      return $http.get('http://bestrida.herokuapp.com/api/users/');
+    getUser: function(challengerId) {
+      return $http.get('http://bestrida.herokuapp.com/api/users/' + challengerId);
     },
     getSegments: function() {
       return $http.get('http://bestrida.herokuapp.com/api/segments/');

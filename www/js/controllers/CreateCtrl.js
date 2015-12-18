@@ -2,39 +2,33 @@ angular.module('create', [])
 
 .controller('CreateCtrl', ['$scope', '$http', 'CreateFct', 'AuthFct', function($scope, $http, CreateFct, AuthFct) {
 
-  // Load registered user data when navigating to the create challenge page
-    // NOTE: This currently displays all registered users - consider displaying friends and followers of current user instead
-  CreateFct.getUsers()
-    .success(function(data) {
-      $scope.challengers = data;
-    });
+  // Save current user information
+  $scope.user = AuthFct.user.athlete;
 
-  // Load segment data when navigating to the create challenge page
-    // NOTE: This currently displays all segments for every registered user - consider displaying segments of only the current user instead
-  CreateFct.getSegments()
+  // Load and save current user friends and segments
+  CreateFct.getUser($scope.user.id)
     .success(function(data) {
-      $scope.segments = data;
+      $scope.challengers = data.friends;
+      $scope.segments = data.segments;
     })
 
-  // alert(user.athlete.id);
   // Create Challenge - Triggered when 'create challenge' button is clicked
     // creates data object from user input and then calls factory create method where the post reqeust lives
   $scope.createChallenge = function() {
     var data = {
-      segmentId: $scope.segment._id,
+      segmentId: $scope.segment.id,
       segmentName: $scope.segment.name,
-      // TODO: Figure out how to pull the challengerId - currently hard coded
-      challengerId: 6274388,
-      challengerName: 'AJ Mullins',
-      challengeeId: $scope.challenger._id,
-      challengeeName: $scope.challenger.fullName,
+      challengerId: $scope.user.id,
+      // TODO: should be fullName but that attribute field is not available
+      challengerName: $scope.user.firstname,
+      challengeeId: $scope.challenger.id,
+      // TODO: should be fullName but that attribute field is not available
+      challengeeName: $scope.challenger.firstname,
       completionDate: $scope.date
     }
-    console.log(data);
     CreateFct.createChallenge(data);
   }
 
-  $scope.user = AuthFct.user;
 
 }])
 
@@ -46,6 +40,7 @@ angular.module('create', [])
       label:'@',
       labelField:'@',
       labelField1: '@',
+      labelField2: '@',
       provider:'=',
       ngModel: '=?',
       ngValue: '=?',
@@ -71,7 +66,7 @@ angular.module('create', [])
       +'<div class="optionList padding-left padding-right" ng-hide="showHides">'
         // +'<ion-scroll>'
           +'<ul class="list">'
-            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | orderBy: labelField1 | limitTo:3">{{item[labelField]}}</li>'
+            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | orderBy: labelField2 | limitTo:3">{{item[labelField]}} {{item[labelField1]}}</li>'
           +'</ul>'
         // +'</ion-scroll>'
       +'</div>'
@@ -79,7 +74,7 @@ angular.module('create', [])
       +'<div class="optionList padding-left padding-right" ng-show="showHide">'
         // +'<ion-scroll>'
           +'<ul class="list">'
-            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | filter:ngModel">{{item[labelField]}}</li>'
+            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | filter:ngModel">{{item[labelField]}} {{item[labelField1]}}</li>'
           +'</ul>'
         // +'</ion-scroll>'
       +'</div>',

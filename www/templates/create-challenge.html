@@ -8,7 +8,7 @@
       <div>
         <div class="item item-divider">Select a Challenger</div>
         <!-- had to change label-field1 to reference a different attribute as count does not currently exist in our users DB -->
-        <ion-select label="Select a Challenger" label-field="fullName" label-field1="firstname" provider="challengers"  ng-model="challenger"/>
+        <ion-select label="Select a Challenger" label-field="firstname" label-field1="lastname" label-field2="count" provider="challengers"  ng-model="challenger"/>
       </div>
 
       <br>
@@ -18,7 +18,7 @@
       <div>
         <div class="item item-divider">Select a Segment</div>
         <!-- had to change label-field1 to reference a different attribute as count does not currently exist in our users DB -->
-        <ion-select label="Select a segment" label-field="name" label-field1="name" provider="segments"  ng-model="segment"/>
+        <ion-select label="Select a segment" label-field="name" label-field2="count" provider="segments"  ng-model="segment"/>
       </div>
 
       <br>
@@ -35,13 +35,13 @@
       
       <br>
 
-      <a class="button button-block button-assertive" ng-disabled="!(segment.name && challenger.fullName && date)" ng-click="createChallenge()"href="#/tab/active-challenges" >Create Challenge</a>
+      <a class="button button-block button-assertive" ng-disabled="!(segment.name && challenger.firstname && date)" ng-click="createChallenge()"href="#/tab/active-challenges" >Create Challenge</a>
 
       <div>
         TEST
       </div>
       <div>
-        {{user.athlete.id}}
+        {{user.id}}
       </div>
      
     </div>
