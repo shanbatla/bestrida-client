@@ -47,11 +47,14 @@ angular.module('activechallengesservice', [])
     },
     removeActiveChallenge: function(activeChallenge) {
       console.log(activeChallenge);
+      var completeChallenge = {
+        id: activeChallenge._id,
+        userID: 6274388
+      };
       // activeChallenges.splice(activeChallenges.indexOf(activeChallenge), 1);
-      // console.log("clicked");
 
       //data should be challenge id and user id
-      // return $http.post('', activeChallenge);
+      return $http.post('http://bestrida.herokuapp.com/api/challenges/complete', completeChallenge);
     }
   }
 }]);
