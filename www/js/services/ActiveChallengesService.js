@@ -61,7 +61,6 @@ angular.module('activechallengesservice', [])
   var auth = {};
 
   auth.login = function() {
-      console.log('inside auth factory login');
       
       var ref = window.open('https://www.strava.com/oauth/authorize?' + 'client_id=' + clientID + '&response_type=code' + '&redirect_uri=http://localhost/callback ', '_blank', 'location=yes');
       ref.addEventListener('loadstart', function(event) { 
@@ -92,20 +91,18 @@ angular.module('activechallengesservice', [])
 .factory('ActiveChallengesFct', ['$http', function($http) {
 
   return {
-    getActiveChallenges: function() {
-      //currently getting the challenges for user 6274388
-      var userId = 6274388;
+    getActiveChallenges: function(userId) {
       return $http.get('http://bestrida.herokuapp.com/api/challenges/active/' + userId);
     },
-    removeActiveChallenge: function(activeChallenge) {
+    removeActiveChallenge: function(activeChallenge, userId) {
       //this is the data format that the server is expecting
       var completeChallenge = {
         id: activeChallenge._id,
         //userId will need to reflect the logged in user's id - currently hardcoded for testing purposes
-        userId: 6274388
+        userId: userId
       };
       // activeChallenges.splice(activeChallenges.indexOf(activeChallenge), 1);
       return $http.post('http://bestrida.herokuapp.com/api/challenges/complete', completeChallenge);
     }
-  }
+  };
 }]);
