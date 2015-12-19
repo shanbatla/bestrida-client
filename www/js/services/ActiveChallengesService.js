@@ -1,9 +1,8 @@
 angular.module('activechallengesservice', [])
 
-.factory('ActiveChallenges', function() {
-  // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
+.factory('ActiveChallenges', function() {
+
   var challengers = mockChallengers;
 
   return {
@@ -60,7 +59,6 @@ angular.module('activechallengesservice', [])
 
 .factory('AuthFct', ['$http', '$location', '$state', '$cordovaOauth', function($http, $location, $state, $cordovaOauth) {
   var auth = {};
-  alert(auth);
 
   auth.login = function() {
       console.log('inside auth factory login');
@@ -71,7 +69,6 @@ angular.module('activechallengesservice', [])
           requestToken = (event.url).split("code=")[1];
           var code = (event.url).split("code=")[1];
           ref.close();
-          $state.go('tab.challenge-feed');
 
           $http({
             method: 'POST',
@@ -79,15 +76,36 @@ angular.module('activechallengesservice', [])
           })
             .then(function (response) {
               auth.user = response.data;
-              alert(user.athlete.id);
+              $state.go('tab.challenge-feed');
               return user;
             }, function (error) {
-              alert(error);
+              $state.go('login');
           });  
         }
       });
-    }
+    };
 
     return auth;
 
+}])
+
+.factory('ActiveChallengesFct', ['$http', function($http) {
+
+  return {
+    getActiveChallenges: function() {
+      //currently getting the challenges for user 6274388
+      var userId = 6274388;
+      return $http.get('http://bestrida.herokuapp.com/api/challenges/active/' + userId);
+    },
+    removeActiveChallenge: function(activeChallenge) {
+      //this is the data format that the server is expecting
+      var completeChallenge = {
+        id: activeChallenge._id,
+        //userId will need to reflect the logged in user's id - currently hardcoded for testing purposes
+        userId: 6274388
+      };
+      // activeChallenges.splice(activeChallenges.indexOf(activeChallenge), 1);
+      return $http.post('http://bestrida.herokuapp.com/api/challenges/complete', completeChallenge);
+    }
+  }
 }]);
