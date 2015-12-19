@@ -10,7 +10,7 @@ angular.module('create', [])
     .success(function(data) {
       $scope.challengers = data.friends;
       $scope.segments = data.segments;
-    })
+    });
 
   // Create Challenge - Triggered when 'create challenge' button is clicked
     // creates data object from user input and then calls factory create method where the post reqeust lives
@@ -25,9 +25,9 @@ angular.module('create', [])
       // TODO: should be fullName but that attribute field is not available
       challengeeName: $scope.challenger.firstname,
       completionDate: $scope.date
-    }
+    };
     CreateFct.createChallenge(data);
-  }
+  };
 
 
 }])
@@ -106,7 +106,7 @@ angular.module('create', [])
         if(!scope.ngModel){
           scope.showHide = false;
         }
-      }
+      };
             
       scope.$watch('ngModel',function(newValue){
         if(newValue)

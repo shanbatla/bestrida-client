@@ -4,6 +4,6 @@ angular.module('auth', ['ngCordovaOauth'])
 
   $scope.login = function() {
     AuthFct.login();
-  }
+  };
 
 }]);

@@ -1,14 +1,16 @@
 angular.module('activechallengesctrl', [])
 
-.controller('ActiveChallengesCtrl', function($scope, ActiveChallenges, ActiveChallengesFct) {
+.controller('ActiveChallengesCtrl',['$scope', 'ActiveChallengesFct', 'AuthFct', function($scope, ActiveChallengesFct, AuthFct) {
 
-  ActiveChallengesFct.getActiveChallenges()
+  $scope.user = AuthFct.user.athlete;
+
+  ActiveChallengesFct.getActiveChallenges($scope.user.id)
     .success(function(data) {
       $scope.activeChallenges = data;
     });
-  
-  $scope.removeActiveChallenge = function(activeChallenge) {
-    ActiveChallengesFct.removeActiveChallenge(activeChallenge);
+  var userId = $scope.user.id;
+  $scope.removeActiveChallenge = function(activeChallenge, userId) {
+    ActiveChallengesFct.removeActiveChallenge(activeChallenge, userId);
   };
 
-});
+}]);
