@@ -1,11 +1,11 @@
 <ion-view view-title="Completed Challenges">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="challenger in challengers" type="item-text-wrap" href="#/tab/challenge-stats">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="challenge in challenges" type="item-text-wrap" href="#/tab/challenge-stats">
         <img ng-src="{{challenger.face}}">
-        <h2>{{challenger.name}}</h2>
-        <p>Challenged you to Segment {{challenger.segment}}</p>
-        <p>You {{challenger.result}} this challenge!</p>
+        <h2>{{challenge.challengeeName}}</h2>
+        <p>Challenged you to Segment {{challenge.segmentName}}</p>
+        <p>Declare winner here!</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
