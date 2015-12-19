@@ -88,6 +88,15 @@ angular.module('activechallengesservice', [])
 
 }])
 
+.factory('CompletedFct', ['$http', function($http) {
+
+  return {
+    getCompletedChallenge: function(userId) {
+      return $http.get('http://bestrida.herokuapp.com/api/challenges/completed/' + userId);
+    }
+  };
+}])
+
 .factory('ActiveChallengesFct', ['$http', function($http) {
 
   return {

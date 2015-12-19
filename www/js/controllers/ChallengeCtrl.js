@@ -10,7 +10,7 @@ angular.module('challengers', [])
     })
     .error(function(error) {
       alert(error);
-    })
+    });
 
   $scope.acceptChallenge = function(challenge) {
     alert("No backing out now!");
