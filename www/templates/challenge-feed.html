@@ -14,15 +14,15 @@
     <!-- Challenge feed with list card -->
     <div ng-repeat="challenge in challenges">
       <div class="list card">
-        <div class="item item-divider">Challenge from {{ challenge.challengeeName }}</div>
+        <div class="item item-divider">Challenge from {{challenge.challengeeName}}</div>
         <div class="item item-body">
           <div>
-            Gear up! You've been challenged to {{ challenge.segmentName }}
+            Gear up! You've been challenged to {{challenge.segmentName}}
           </div>
         </div>
         <div class="button-bar">
-          <a class="button"ng-click="acceptChallenge()">Accept</a>
-          <a class="button"ng-click="declineChallenge()">Decline</a>
+          <a class="button"ng-click="acceptChallenge(challenge); challenges.splice($index, 1)">Accept</a>
+          <a class="button"ng-click="declineChallenge(challenge); challenges.splice($index, 1)">Decline</a>
         </div>
       </div>
     </div>

@@ -9,25 +9,23 @@ angular.module('challengers', [])
       $scope.challenges = data;
     })
     .error(function(error) {
-      alert(error);
-    });
+      alert("Looks like you're fresh out of pending challenges. Get to work and challenge a friend!");
+    })
 
   $scope.acceptChallenge = function(challenge) {
-    alert("No backing out now!");
     var data = {
-      id: challenge.id
+      id: challenge._id
     };
-    // TODO: Build out button functionality
-    // FeedFct.acceptChallenge(data);
+    alert("You've accepted this challenge!");
+    FeedFct.postAcceptChallenge(data);
   };
 
   $scope.declineChallenge = function(challenge) {
-    alert("Maybe next time!");
     var data = {
-      id: challenge.id
+      id: challenge._id
     };
-    // TODO: Build out button functionality
-    // FeedFct.declineChallenge(data);
+    alert("You've declined this challenge...");
+    FeedFct.postDeclineChallenge(data);
   };
 
 }]);
