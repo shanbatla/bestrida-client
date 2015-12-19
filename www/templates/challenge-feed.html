@@ -12,12 +12,12 @@
     </button> -->
 
     <!-- Challenge feed with list card -->
-    <div ng-repeat="challenger in challengers">
+    <div ng-repeat="challenge in challenges">
       <div class="list card">
-        <div class="item item-divider">Challenge from {{ challenger.challengeeId }}</div>
+        <div class="item item-divider">Challenge from {{ challenge.challengeeName }}</div>
         <div class="item item-body">
           <div>
-            {{ challenger.challengeeId }} challenges you to {{ challenger.segmentName }}
+            Gear up! You've been challenged to {{ challenge.segmentName }}
           </div>
         </div>
         <div class="button-bar">
