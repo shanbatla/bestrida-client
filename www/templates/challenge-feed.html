@@ -1,5 +1,7 @@
 <ion-view view-title="Challenge Feed">
   <ion-content class="padding">
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher>
 
     <!-- Create challenge button -->
     <a href="#/tab/create-challenge" class="button button-block button-assertive">
@@ -10,6 +12,7 @@
     <!-- <button class="button button-block button-assertive" href="#/tab/create-challenge">
       Create Challenge
     </button> -->
+
 
     <!-- Challenge feed with list card -->
     <div ng-repeat="challenge in challenges">
