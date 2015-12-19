@@ -3,9 +3,9 @@
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="challenge in challenges" type="item-text-wrap" href="#/tab/challenge-stats">
         <img ng-src="{{challenger.face}}">
-        <h2>{{challenge.challengeeName}}</h2>
-        <p>Challenged you to Segment {{challenge.segmentName}}</p>
-        <p>Declare winner here!</p>
+        <h2>Opponent: {{challenge.opponent}}</h2>
+        <p>Segment: {{challenge.segmentName}}</p>
+        <p>{{challenge.completedStatus}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
