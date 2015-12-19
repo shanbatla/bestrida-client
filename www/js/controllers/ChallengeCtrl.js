@@ -8,9 +8,10 @@ angular.module('challengers', [])
     .success(function(data) {
       $scope.challenges = data;
     })
-    .error(function(error) {
-      alert("Looks like you're fresh out of pending challenges. Get to work and challenge a friend!");
-    })
+    // TODO: error takes too long to display -> Option: replace with logic that will check the length of our data array and display a different line item if the length is 0
+    // .error(function(error) {
+    //   alert("Looks like you're fresh out of pending challenges. Get to work and challenge a friend!");
+    // })
 
   $scope.acceptChallenge = function(challenge) {
     var data = {
