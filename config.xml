@@ -2,11 +2,11 @@
 <widget id="com.ionicframework.bestridaclient119979" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>bestrida-client</name>
   <description>
-        An Ionic Framework and Cordova project.
-    </description>
-  <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
-    </author>
+    A Strava.com based application to challenge your athlete friends with running and cycling workout activities
+  </description>
+  <author email="bestrida.hrr9@gmail.com" href="http://www.bestrida.co/">
+      Bestrida Team
+  </author>
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
@@ -22,5 +22,5 @@
     <param name="ios-package" value="CDVInAppBrowser" />
   </feature>
   <!-- Allow links to example.com -->
-  <allow-navigation href="http://bestrida.herokuapp.com/api/register" />
+  <allow-navigation href="http://bestrida.co/api/register" />
 </widget>
