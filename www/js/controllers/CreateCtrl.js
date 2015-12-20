@@ -19,11 +19,9 @@ angular.module('create', [])
       segmentId: $scope.segment.id,
       segmentName: $scope.segment.name,
       challengerId: $scope.user.id,
-      // TODO: should be fullName but that attribute field is not available
-      challengerName: $scope.user.firstname,
+      challengerName: $scope.user.firstname + ' ' + $scope.user.lastname,
       challengeeId: $scope.challenger.id,
-      // TODO: should be fullName but that attribute field is not available
-      challengeeName: $scope.challenger.firstname,
+      challengeeName: $scope.challenger.fullName,
       completionDate: $scope.date
     };
     CreateFct.createChallenge(data);
