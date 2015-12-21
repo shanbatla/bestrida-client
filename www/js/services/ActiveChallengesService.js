@@ -28,11 +28,8 @@ angular.module('activechallengesservice', [])
       pendingChallenge: function(userId) {
         return $http.get('http://bestrida.herokuapp.com/api/challenges/pending/'+ userId);
       },
-      getUser: function(challengeeId) {
-        return $http.get('http://bestrida.herokuapp.com/api/users/' + challengeeId);
-      },
-      getSegments: function(segmentId) {
-        return $http.get('http://bestrida.herokuapp.com/api/segments/' + segmentId);
+      getFriends: function(userId) {
+        return $http.get('http://bestrida.herokuapp.com/api/friends/' + userId);
       },
       postAcceptChallenge: function(challenge) {
         return $http.post('http://bestrida.herokuapp.com/api/challenges/accept', challenge);
