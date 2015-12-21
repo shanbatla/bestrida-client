@@ -1,9 +1,11 @@
 angular.module('challengers', [])
 
 .controller('ChallengeCtrl', ['$scope', 'FeedFct', 'AuthFct', function($scope, FeedFct, AuthFct) {
-
+  // Save current users information
   $scope.user = AuthFct.user.athlete;
+  $scope.photo = {};
 
+  // Update pending challenges when the user pulls down to refresh
   $scope.doRefresh = function() {
     FeedFct.pendingChallenge($scope.user.id)
     .success(function(data) {
@@ -14,15 +16,21 @@ angular.module('challengers', [])
     });
   };
 
+  // Save current users pending challenges
   FeedFct.pendingChallenge($scope.user.id)
     .success(function(data) {
       $scope.challenges = data;
     });
-    // TODO: error takes too long to display -> Option: replace with logic that will check the length of our data array and display a different line item if the length is 0
-    // .error(function(error) {
-    //   alert("Looks like you're fresh out of pending challenges. Get to work and challenge a friend!");
-    // })
 
+  // Save current users friends photo to display
+  // NOTE: This is costly in terms of time to make the API call and the iterate through the friends array. Might make more sense to store this as part of all challenges instead so we only have to make 1 API call?
+  FeedFct.getFriends($scope.user.id)
+    .success(function(data) {
+      data.forEach(function(friend) {
+        $scope.photo[friend.id] = friend.photo;
+      })
+    });
+ 
   $scope.acceptChallenge = function(challenge) {
     var data = {
       id: challenge._id
