@@ -10,3 +10,5 @@ www/config.js
 
 # Libraries
 www/lib
+
+.DS_Store

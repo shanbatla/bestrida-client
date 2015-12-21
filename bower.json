@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "ng-cordova-oauth": "~0.2.0",
-    "ngCordova": "~0.1.23-alpha"
+    "ngCordova": "~0.1.23-alpha",
+    "angular-local-storage": "~0.2.3"
   }
 }
