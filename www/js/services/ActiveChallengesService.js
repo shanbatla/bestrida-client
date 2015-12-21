@@ -62,9 +62,9 @@ angular.module('activechallengesservice', [])
 
   auth.login = function() {
       
-      var ref = window.open('https://www.strava.com/oauth/authorize?' + 'client_id=' + clientID + '&response_type=code' + '&redirect_uri=http://localhost/callback ', '_blank', 'location=yes');
+      var ref = window.open('http://bestrida.co/api/register', '_blank', 'location=no,toolbar=no');
       ref.addEventListener('loadstart', function(event) { 
-        if((event.url).startsWith("http://localhost/callback")) {
+        if((event.url).startsWith("http://bestrida.co/api/registercode")) {
           requestToken = (event.url).split("code=")[1];
           var code = (event.url).split("code=")[1];
           ref.close();
