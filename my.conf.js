@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
@@ -19,14 +19,14 @@ module.exports = function(config) {
       'www/lib/angular-mocks/angular-mocks.js',
       'www/lib/ionic/js/ionic.bundle.js',
       'test/**/*.js',
-      'www/js/*.js'
-      // 'www/js/app.js',
-      // 'www/js/controllers/ChallengeCtrl.js',
-      // 'www/js/controllers/ActiveChallengesCtrl.js',
-      // 'www/js/controllers/AccountCtrl.js',
-      // 'www/js/controllers/CreateCtrl.js',
-      // 'www/js/controllers/AuthCtrl.js',
-      // 'www/js/services/ActiveChallengesService.js'
+      'www/js/*.js',
+      'www/js/app.js',
+      'www/js/controllers/ChallengeCtrl.js',
+      'www/js/controllers/ActiveChallengesCtrl.js',
+      'www/js/controllers/AccountCtrl.js',
+      'www/js/controllers/CreateCtrl.js',
+      'www/js/controllers/AuthCtrl.js',
+      'www/js/services/ActiveChallengesService.js'
     ],
 
 

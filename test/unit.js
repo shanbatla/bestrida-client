@@ -57,20 +57,41 @@
 // });
 
 
-describe('Auth Controller', function() {
-  beforeEach(module('starter', ['ionic', 'activechallengesservice', 'challengers', 'activechallengesctrl', 'tailofthetape', 'account', 'create', 'completed', 'challengestats', 'auth', 'ngCordovaOauth', 'ngCordova']));
+// describe('Auth Controller', function() {
+//   beforeEach(module('starter', ['ionic', 'activechallengesservice', 'challengers', 'activechallengesctrl', 'tailofthetape', 'account', 'create', 'completed', 'challengestats', 'auth', 'ngCordovaOauth', 'ngCordova']));
 
-  var $controller;
+//   var $controller;
 
-  beforeEach(inject(function(_$controller_){
-    // The injector unwraps the underscores (_) from around the parameter names when matching
-    $controller = _$controller_;
+//   beforeEach(inject(function(_$controller_){
+//     // The injector unwraps the underscores (_) from around the parameter names when matching
+//     $controller = _$controller_;
+//   }));
+
+//   describe('$scope.login', function() {
+//     it('should be a function', function() {
+//       expect($scope.login).to.be.a('function');
+//     });
+
+//   });
+// });
+
+
+describe('Controllers', function(){
+  var scope;
+
+  // load the controller's module
+  beforeEach(module('account'));
+
+  beforeEach(inject(function($rootScope, $controller) {
+      scope = $rootScope.$new();
+      $controller('AccountCtrl', {$scope: scope});
   }));
 
-  describe('$scope.login', function() {
-    it('should be a function', function() {
-      expect($scope.login).to.be.a('function');
-    });
-
+  // tests start here
+  it('should have enabled friends to be true', function(){
+      expect(scope.settings.enableFriends).toEqual(true);
   });
-});
+})
+
+
+
