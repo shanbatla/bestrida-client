@@ -3,10 +3,10 @@ angular.module('create', [])
 .controller('CreateCtrl', ['$scope', '$http', 'CreateFct', 'AuthFct', function($scope, $http, CreateFct, AuthFct) {
 
   // Save current user information
-  $scope.user = AuthFct.user.athlete;
+  $scope.userId = AuthFct.userId;
 
   // Load and save current user friends and segments
-  CreateFct.getUser($scope.user.id)
+  CreateFct.getUser($scope.userId)
     .success(function(data) {
       $scope.challengers = data.friends;
       $scope.segments = data.segments;
@@ -18,8 +18,8 @@ angular.module('create', [])
     var data = {
       segmentId: $scope.segment.id,
       segmentName: $scope.segment.name,
-      challengerId: $scope.user.id,
-      challengerName: $scope.user.firstname + ' ' + $scope.user.lastname,
+      challengerId: $scope.userId,
+      challengerName: 'John Appleseed', // FIX ME
       challengeeId: $scope.challenger.id,
       challengeeName: $scope.challenger.fullName,
       completionDate: $scope.date

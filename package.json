@@ -1,7 +1,7 @@
 {
-  "name": "bestrida-client",
+  "name": "bestrida",
   "version": "1.1.1",
-  "description": "bestrida-client: An Ionic project",
+  "description": "Bestrida",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

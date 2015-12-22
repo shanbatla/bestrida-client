@@ -2,24 +2,24 @@ angular.module('completed', [])
 
 .controller('CompletedCtrl', ['$scope','CompletedFct', 'AuthFct',function($scope, CompletedFct, AuthFct) {
   
-  $scope.user = AuthFct.user.athlete;
+  $scope.userId = AuthFct.userId;
 
   $scope.doRefresh = function() {
-    CompletedFct.getCompletedChallenge($scope.user.id)
+    CompletedFct.getCompletedChallenge($scope.userId)
     .success(function(data) {
       $scope.challenges = data;
       $scope.challenges.forEach(function(challenge) {
-        if($scope.user.id !== challenge.challengeeId) {
+        if($scope.userId !== challenge.challengeeId) {
           challenge.opponent = challenge.challengeeName;
-        } else if($scope.user.id !== challenge.challengerId) {
+        } else if($scope.userId !== challenge.challengerId) {
           challenge.opponent = challenge.challengerName;
         } else {
           challenge.opponent = "Opponent";
         }
         if(challenge.challengeeCompleted && challenge.challengerCompleted) {
-          if($scope.user.id === challenge.winnerId) {
+          if($scope.userId === challenge.winnerId) {
             challenge.completedStatus = "You won this challenge!";
-          } else if($scope.user.id === challenge.loserId) {
+          } else if($scope.userId === challenge.loserId) {
             challenge.completedStatus = "You lost this challenge.";
           }else {
             challenge.completedStatus = "Challenge still calculating.";
@@ -37,21 +37,21 @@ angular.module('completed', [])
     });
   };
 
-  CompletedFct.getCompletedChallenge($scope.user.id)
+  CompletedFct.getCompletedChallenge($scope.userId)
     .success(function(data) {
       $scope.challenges = data;
       $scope.challenges.forEach(function(challenge) {
-        if($scope.user.id !== challenge.challengeeId) {
+        if($scope.userId !== challenge.challengeeId) {
           challenge.opponent = challenge.challengeeName;
-        } else if($scope.user.id !== challenge.challengerId) {
+        } else if($scope.userId !== challenge.challengerId) {
           challenge.opponent = challenge.challengerName;
         } else {
           challenge.opponent = "Opponent";
         }
         if(challenge.challengeeCompleted && challenge.challengerCompleted) {
-          if($scope.user.id === challenge.winnerId) {
+          if($scope.userId === challenge.winnerId) {
             challenge.completedStatus = "You won this challenge!";
-          } else if($scope.user.id === challenge.loserId) {
+          } else if($scope.userId === challenge.loserId) {
             challenge.completedStatus = "You lost this challenge.";
           }else {
             challenge.completedStatus = "Challenge still calculating.";
