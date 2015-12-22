@@ -1,20 +1,21 @@
-describe('PasswordController', function() {
+
+var assert = chai.assert;
+var should = chai.should();
+var expect = chai.expect;
+
+describe('AuthCtrl', function() {
   beforeEach(module('app'));
 
-  var $controller;
+  var $AuthCtrl;
 
-  beforeEach(inject(function(_$controller_){
+  beforeEach(inject(function(_$AuthCtrl_){
     // The injector unwraps the underscores (_) from around the parameter names when matching
-    $controller = _$controller_;
+    $AuthCtrl = _$AuthCtrl_;
   }));
 
-  describe('$scope.grade', function() {
-    it('sets the strength to "strong" if the password length is >8 chars', function() {
-      var $scope = {};
-      var controller = $controller('PasswordController', { $scope: $scope });
-      $scope.password = 'longerthaneightchars';
-      $scope.grade();
-      expect($scope.strength).toEqual('strong');
+  describe('$scope.login', function() {
+    it('is a function', function() {
+      expect($scope.login).to.be.a('function');
     });
   });
 });
