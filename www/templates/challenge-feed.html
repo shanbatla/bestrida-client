@@ -16,7 +16,7 @@
         <p>{{challenge.challengerName}} VS. {{challenge.challengeeName}}</p>
         <p>Segment: {{challenge.segmentName}}</p>
         <p>Complete By: {{challenge.expires | date:format:shortDate}}</p>
-        <div ng-show="{{challenge.challengeeId === user.id}}">
+        <div ng-show="{{challenge.challengeeId === userId}}">
           <button class="button-small button-small button-outline icon ion-close-round" ng-click="declineChallenge(challenge); challenges.splice($index, 1)"></button>
           <button class="button-small button-outline icon ion-checkmark-round" ng-click="acceptChallenge(challenge); challenges.splice($index, 1)"></button>
         </div>
