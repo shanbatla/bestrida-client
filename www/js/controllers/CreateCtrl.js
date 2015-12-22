@@ -8,6 +8,7 @@ angular.module('create', [])
   // Load and save current user friends and segments
   CreateFct.getUser($scope.userId)
     .success(function(data) {
+      $scope.userName = data.fullName;
       $scope.challengers = data.friends;
       $scope.segments = data.segments;
     });
@@ -19,7 +20,7 @@ angular.module('create', [])
       segmentId: $scope.segment.id,
       segmentName: $scope.segment.name,
       challengerId: $scope.userId,
-      challengerName: 'John Appleseed', // FIX ME
+      challengerName: $scope.userName,
       challengeeId: $scope.challenger.id,
       challengeeName: $scope.challenger.fullName,
       completionDate: $scope.date

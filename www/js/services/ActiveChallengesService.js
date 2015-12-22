@@ -43,7 +43,7 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 .factory('CreateFct', ['$http', function($http) {
   return {
     createChallenge: function(data) {
-      return $http.post('http://bestrida.co/api/challenges/create', data);
+      return $http.post('http://www.bestrida.co/api/challenges/create', data);
     },
     getUser: function(challengerId) {
       return $http.get('http://bestrida.co/api/users/' + challengerId);
