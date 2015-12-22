@@ -57,7 +57,7 @@
 // });
 
 
-describe('AuthCtrl', function() {
+describe('Auth Controller', function() {
   beforeEach(module('starter', ['ionic', 'activechallengesservice', 'challengers', 'activechallengesctrl', 'tailofthetape', 'account', 'create', 'completed', 'challengestats', 'auth', 'ngCordovaOauth', 'ngCordova']));
 
   var $controller;

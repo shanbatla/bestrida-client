@@ -17,9 +17,16 @@ module.exports = function(config) {
     files: [
       'www/lib/angular/angular.js',
       'www/lib/angular-mocks/angular-mocks.js',
-      'lib/ionic/js/ionic.bundle.js',
+      'www/lib/ionic/js/ionic.bundle.js',
       'test/**/*.js',
       'www/js/*.js'
+      // 'www/js/app.js',
+      // 'www/js/controllers/ChallengeCtrl.js',
+      // 'www/js/controllers/ActiveChallengesCtrl.js',
+      // 'www/js/controllers/AccountCtrl.js',
+      // 'www/js/controllers/CreateCtrl.js',
+      // 'www/js/controllers/AuthCtrl.js',
+      // 'www/js/services/ActiveChallengesService.js'
     ],
 
 
@@ -60,7 +67,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
