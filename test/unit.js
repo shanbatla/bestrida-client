@@ -76,7 +76,7 @@
 // });
 
 
-describe('Controllers', function(){
+describe('Account Controller', function(){
   var scope;
 
   // load the controller's module
@@ -93,5 +93,20 @@ describe('Controllers', function(){
   });
 })
 
+describe('Auth Controller', function(){
+  var scope;
 
+  // load the controller's module
+  beforeEach(module('auth', ['ngCordovaOauth']));
+
+  beforeEach(inject(function($rootScope, $controller) {
+      scope = $rootScope.$new();
+      $controller('AuthCtrl', {$scope: scope});
+  }));
+
+  // tests start here
+  it('should have a defined function called login', function(){
+      expect(scope.login).toBeDefined();
+  });
+})
 
