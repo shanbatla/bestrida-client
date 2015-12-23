@@ -8,7 +8,7 @@ angular.module('challengestats', [])
   //User, and their time
   //Opponenet, and their time
 
-  //Get challenge id 
+  //Get user id 
   $scope.userId = AuthFct.userId;
 
   // Get user name
@@ -17,17 +17,32 @@ angular.module('challengestats', [])
       $scope.userName = data.fullName;
     });
 
-  //Get challengeId
+  //Get challengeId from state url
   $scope.challengeId = $stateParams.challengeId;
   
-  //Get challenges
+  //Get challenges, iterate through challenges, pick the one that matches the stateParam from above
   CompletedFct.getCompletedChallenge($scope.userId)
     .success(function(data) {
       $scope.challenges = data;
       $scope.challenges.forEach(function(challenge) {
-        //alert both variables below
         if ($scope.challengeId === challenge._id) {
+          
           $scope.opponent = challenge.challengeeName;
+          
+          $scope.segment = challenge.segmentName;
+          
+          var distanceInMeters = challenge.segmentDistance;
+          var distanceInMiles = distanceInMeters/1609.34
+          $scope.distance = distanceInMiles;
+          
+          $scope.userTime = challenge.challengerTime;
+          $scope.opponentTime = challenge.challengeeTime;
+          if ($scope.userTime < $scope.opponentTime) {
+            $scope.challengeResult = "Won";
+          } else {
+            $scope.challengeResult = "Lost";
+          }
+
         }
       })
     })
