@@ -54,55 +54,13 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
   };
 }])
 
-// .factory('AuthFct', ['$http', '$location', '$state', '$cordovaOauth', function($http, $location, $state, $cordovaOauth) {
-//   var auth = {};
-
-//   auth.login = function() {
-      
-//       var ref = window.open('http://bestrida.co/api/register', '_blank', 'location=no,toolbar=no');
-//       ref.addEventListener('loadstart', function(event) { 
-//         if((event.url).startsWith("http://bestrida.co/api/registercode")) {
-//           requestToken = (event.url).split("code=")[1];
-//           var code = (event.url).split("code=")[1];
-//           ref.close();
-
-//           $http({
-//             method: 'POST',
-//             url: 'https://www.strava.com/oauth/token?' + 'client_id=' + clientID + '&client_secret=' + clientSecret + '&code=' + code
-//           })
-//             .then(function (response) {
-//               auth.user = response.data;
-//               $state.go('tab.challenge-feed');
-//               return user;
-//             }, function (error) {
-//               $state.go('login');
-//           });  
-//         }
-//       });
-//     };
-
-//     return auth;
-
-// }])
-
-///////////////////////////////////////////////
-.factory('AuthFct', function ($window, $state, $ionicLoading, localStorageService, $location) {
+.factory('AuthFct', function ($window, $state, localStorageService, $location) {
   var url = 'http://bestrida.co/auth/strava';
   var loginWindow, token, hasToken, userId, hasUserId;
   var auth = {};
   auth.login = function () {
     loginWindow = $window.open(url, '_blank', 'location=no,toolbar=no');
-    $ionicLoading.show({
-       template: '<p>Contacting Strava...</p><i class="icon ion-loading-c"></i>',
-       animation: 'fade-in',
-       showBackdrop: false,
-       maxWidth: 200,
-       showDelay: 200
-    });
-    loginWindow.addEventListener("loadstop", function(e) {
-        $ionicLoading.hide();
-        loginWindow.show();
-    });
+
     loginWindow.addEventListener('loadstart', function (event) {
       if((event.url).startsWith("http://www.bestrida.co/loggedIn.html")) {
         var token = event.url.match('oauth_token=(.*)&userId')[1];
