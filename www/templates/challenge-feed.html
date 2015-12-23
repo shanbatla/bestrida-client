@@ -11,7 +11,7 @@
     <!-- Challenge feed with list items -->
 
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar" ng-repeat="challenge in challenges | orderBy: 'expires'">
+      <ion-item class="item-remove-animate item-avatar" ng-repeat="challenge in challenges | orderBy: 'expires'" href="#/tab/pending-detail/:challengeId">
         <img ng-src="{{photo[challenge.challengerId] || photo[challenge.challengeeId]}}">
         <p>{{challenge.challengerName}} VS. {{challenge.challengeeName}}</p>
         <p>Segment: {{challenge.segmentName}}</p>

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'activechallengesctrl', 'tailofthetape', 'account', 'create', 'completed', 'challengestats', 'auth', 'ngCordovaOauth', 'ngCordova'])
+angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'activechallengesctrl', 'tailofthetape', 'pendingdetail', 'account', 'create', 'completed', 'challengestats', 'auth', 'ngCordovaOauth', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -59,6 +59,16 @@ angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'a
     }
   })
 
+  .state('tab.pending-detail', {
+    url: '/pending-detail/:challengeId',
+    views: {
+      'completed-challenges': {
+        templateUrl: 'templates/pending-detail.html',
+        controller: 'ChallengeStatsCtrl'
+      }
+    }
+  })
+
   // set up create challenge state
   .state('tab.create-challenge', {
     url: '/create-challenge',
@@ -81,7 +91,7 @@ angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'a
     }
   })
   .state('tab.challenge-stats', {
-    url: '/challenge-stats',
+    url: '/challenge-stats/:challengeId',
     views: {
       'completed-challenges': {
         templateUrl: 'templates/challenge-stats.html',
@@ -91,7 +101,6 @@ angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'a
   })
 
   .state('tab.active-challenges', {
-  // .state('tab.chats', {
       url: '/active-challenges',
       views: {
         'active-challenges': {
@@ -100,15 +109,15 @@ angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'a
         }
       }
     })
-    // .state('tab.chat-detail', {
-    //   url: '/chats/:challengeId',
-    //   views: {
-    //     'tab-chats': {
-    //       templateUrl: 'templates/chat-detail.html',
-    //       controller: 'TailofTheTapeCtrl'
-    //     }
-    //   }
-    // })
+    .state('tab.active-detail', {
+      url: '/active-challenges/:challengeId',
+      views: {
+        'active-challenges': {
+          templateUrl: 'templates/active-detail.html',
+          controller: 'TailofTheTapeCtrl'
+        }
+      }
+    })
 
   .state('tab.account', {
     url: '/account',
