@@ -2,12 +2,6 @@ angular.module('challengestats', [])
 
 .controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'CreateFct', function($scope, $stateParams, CompletedFct, AuthFct, CreateFct) {
 
-  //Need segment name
-  //Need distance for segment - don't have it
-  //Who won
-  //User, and their time
-  //Opponenet, and their time
-
   //Get user id 
   $scope.userId = AuthFct.userId;
 
@@ -27,14 +21,42 @@ angular.module('challengestats', [])
       $scope.challenges.forEach(function(challenge) {
         if ($scope.challengeId === challenge._id) {
           
+          //Declare opponent
           $scope.opponent = challenge.challengeeName;
           
+          //Declare segment
           $scope.segment = challenge.segmentName;
           
+          //Declare distance
           var distanceInMeters = challenge.segmentDistance;
           var distanceInMiles = distanceInMeters/1609.34
           $scope.distance = distanceInMiles;
           
+          //Declare time for user and opponent, then declare winner
+          //Use this function to convert seconds in human-readable time
+          function secondsToTime(secs) {
+            secs = Math.round(secs);
+            var hours = Math.floor(secs / (60 * 60));
+
+            var divisor_for_minutes = secs % (60 * 60);
+            var minutes = Math.floor(divisor_for_minutes / 60);
+
+            var divisor_for_seconds = divisor_for_minutes % 60;
+            var seconds = Math.ceil(divisor_for_seconds);
+
+            var obj = {
+              "hours": hours,
+              "minutes": minutes,
+              "seconds": seconds
+            };
+
+            var hourString = obj.hours < 10 ? '0' + (obj.hours).toString() : (obj.hours).toString();
+            var minuteString = obj.minutes < 10 ? '0' + (obj.minutes).toString() : (obj.minutes).toString();
+            var secondString = obj.seconds < 10 ? '0' + (obj.seconds).toString() : (obj.seconds).toString();
+
+            return hourString + ':' + minuteString + ':' + secondString;
+          }
+
           $scope.userTime = challenge.challengerTime;
           $scope.opponentTime = challenge.challengeeTime;
           if ($scope.userTime < $scope.opponentTime) {
