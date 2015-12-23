@@ -11,12 +11,12 @@
     <!-- Challenge feed with list items -->
 
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar" ng-repeat="challenge in challenges | orderBy: 'expires'" href="#/tab/pending-detail/:challengeId">
+      <ion-item class="item-remove-animate item-avatar" ng-repeat="challenge in challenges" href="#/tab/pending-detail/:challengeId">
         <img ng-src="{{photo[challenge.challengerId] || photo[challenge.challengeeId]}}">
         <p>{{challenge.challengerName}} VS. {{challenge.challengeeName}}</p>
         <p>Segment: {{challenge.segmentName}}</p>
         <p>Complete By: {{challenge.expires | date:format:shortDate}}</p>
-        <div ng-show="{{challenge.challengeeId === userId}}">
+        <div ng-show="{{challenge.challengeeId}} === {{userId}}">
           <button class="button-small button-small button-outline icon ion-close-round" ng-click="declineChallenge(challenge); challenges.splice($index, 1)"></button>
           <button class="button-small button-outline icon ion-checkmark-round" ng-click="acceptChallenge(challenge); challenges.splice($index, 1)"></button>
         </div>
