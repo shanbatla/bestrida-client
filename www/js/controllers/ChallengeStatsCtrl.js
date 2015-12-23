@@ -57,8 +57,13 @@ angular.module('challengestats', [])
             return hourString + ':' + minuteString + ':' + secondString;
           }
 
-          $scope.userTime = challenge.challengerTime;
-          $scope.opponentTime = challenge.challengeeTime;
+          //Times for both user and opponent
+          var readableUserTime = secondsToTime(challenge.challengerTime);
+          $scope.userTime = readableUserTime;
+          var readableOpponentTime = secondsToTime(challenge.challengeeTime);
+          $scope.opponentTime = readableOpponentTime;
+          
+          //Declare winner
           if ($scope.userTime < $scope.opponentTime) {
             $scope.challengeResult = "Won";
           } else {
@@ -111,5 +116,3 @@ angular.module('challengestats', [])
 //   status: 'complete',
 //   challengeeCompleted: true,
 //   challengerCompleted: true }
-
-
