@@ -1,6 +1,6 @@
 angular.module('challengestats', [])
 
-.controller('ChallengeStatsCtrl', function($scope, $stateParams, CompletedFct, AuthFct) {
+.controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'CreateFct', function($scope, $stateParams, CompletedFct, AuthFct, CreateFct) {
   //Get challenge id 
 
   //Need segment name
@@ -11,11 +11,17 @@ angular.module('challengestats', [])
 
   $scope.userId = AuthFct.userId;
 
+  // Get user name
+  CreateFct.getUser($scope.userId)
+    .success(function(data) {
+      $scope.userName = data.fullName;
+    });
+
   // CompletedFct.getCompletedChallenge($scope.userId) {
 
   // }
 
-});
+}]);
 
 
 //Challenge object

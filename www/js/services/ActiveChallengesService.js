@@ -77,7 +77,6 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
   };
   return auth;
 })
-//////////////////////////////////////////////
 
 .factory('CompletedFct', ['$http', function($http) {
 
