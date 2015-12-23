@@ -32,10 +32,10 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
         return $http.get('http://bestrida.co/api/friends/' + userId);
       },
       postAcceptChallenge: function(challenge) {
-        return $http.post('http://bestrida.co/api/challenges/accept', challenge);
+        return $http.post('http://www.bestrida.co/api/challenges/accept', challenge);
       },
       postDeclineChallenge: function(challenge) {
-        return $http.post('http://bestrida.co/api/challenges/decline', challenge);
+        return $http.post('http://www.bestrida.co/api/challenges/decline', challenge);
       }
     };
 }])
