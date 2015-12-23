@@ -1,13 +1,15 @@
 angular.module('challengestats', [])
 
 .controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'CreateFct', function($scope, $stateParams, CompletedFct, AuthFct, CreateFct) {
-  //Get challenge id 
 
   //Need segment name
   //Need distance for segment - don't have it
   //Who won
   //User, and their time
   //Opponenet, and their time
+
+  //Get challenge id 
+  $scope.userId = AuthFct.userId;
 
   // Get user name
   CreateFct.getUser($scope.userId)
@@ -23,13 +25,14 @@ angular.module('challengestats', [])
     .success(function(data) {
       $scope.challenges = data;
       $scope.challenges.forEach(function(challenge) {
+        //alert both variables below
         if ($scope.challengeId === challenge._id) {
-          $scope.opponent = challenge.challengerName;
+          $scope.opponent = challenge.challengeeName;
         }
       })
     })
     .error(function(error) {
-      alert(error);
+      alert('error');
     });
 
 }]);
@@ -71,3 +74,5 @@ angular.module('challengestats', [])
 //   status: 'complete',
 //   challengeeCompleted: true,
 //   challengerCompleted: true }
+
+
