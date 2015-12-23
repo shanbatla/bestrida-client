@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'activechallengesctrl', 'tailofthetape', 'pendingdetail', 'account', 'create', 'completed', 'challengestats', 'auth', 'ngCordovaOauth', 'ngCordova'])
+angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'activechallengesctrl', 'activedetail', 'pendingdetail', 'account', 'create', 'completed', 'challengestats', 'auth', 'ngCordovaOauth', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -62,9 +62,9 @@ angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'a
   .state('tab.pending-detail', {
     url: '/pending-detail/:challengeId',
     views: {
-      'completed-challenges': {
+      'challenge-feed': {
         templateUrl: 'templates/pending-detail.html',
-        controller: 'ChallengeStatsCtrl'
+        controller: 'PendingDetailCtrl'
       }
     }
   })
@@ -110,11 +110,11 @@ angular.module('starter', ['ionic', 'activechallengesservice', 'challengers', 'a
       }
     })
     .state('tab.active-detail', {
-      url: '/active-challenges/:challengeId',
+      url: '/active-detail/:challengeId',
       views: {
         'active-challenges': {
           templateUrl: 'templates/active-detail.html',
-          controller: 'TailofTheTapeCtrl'
+          controller: 'ActiveDetailCtrl'
         }
       }
     })
