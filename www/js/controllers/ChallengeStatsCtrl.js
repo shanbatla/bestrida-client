@@ -9,17 +9,28 @@ angular.module('challengestats', [])
   //User, and their time
   //Opponenet, and their time
 
-  $scope.userId = AuthFct.userId;
-
   // Get user name
   CreateFct.getUser($scope.userId)
     .success(function(data) {
       $scope.userName = data.fullName;
     });
 
-  // CompletedFct.getCompletedChallenge($scope.userId) {
-
-  // }
+  //Get challengeId
+  $scope.challengeId = $stateParams.challengeId;
+  
+  //Get challenges
+  CompletedFct.getCompletedChallenge($scope.userId)
+    .success(function(data) {
+      $scope.challenges = data;
+      $scope.challenges.forEach(function(challenge) {
+        if ($scope.challengeId === challenge._id) {
+          $scope.opponent = challenge.challengerName;
+        }
+      })
+    })
+    .error(function(error) {
+      alert(error);
+    });
 
 }]);
 
