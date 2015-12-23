@@ -1,20 +1,26 @@
 angular.module('challengestats', [])
 
-.controller('ChallengeStatsCtrl', function($scope, $stateParams) {
+.controller('ChallengeStatsCtrl', function($scope, $stateParams, CompletedFct, AuthFct) {
   //Get challenge id 
 
   //Need segment name
-  $scope.challenge; 
-  //Need distance for segment - 
+  //Need distance for segment - don't have it
   //Who won
   //User, and their time
   //Opponenet, and their time
+
+  $scope.userId = AuthFct.userId;
+
+  // CompletedFct.getCompletedChallenge($scope.userId) {
+
+  // }
 
 });
 
 
 //Challenge object
   //does not have time
+  //don't have distance of segment
 // { _id: '5675914fa878868b3398bd3f',
 //   segmentId: 1,
 //   segmentName: 'Tour de France',
