@@ -27,7 +27,11 @@ angular.module('challengestats', [])
       var challenge = data;
 
       //Declare status
-      // $scope.challengeStatus = challenge.status;
+      if (challenge.status === "complete") {
+        $scope.challengeStatus = true;
+      } else {
+        $scope.challengeStatus = false;
+      }
 
       //Declare opponent
       $scope.opponent = challenge.challengeeName;
