@@ -2,6 +2,11 @@ angular.module('challengestats', [])
 
 .controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'CreateFct', function($scope, $stateParams, CompletedFct, AuthFct, CreateFct) {
 
+  //Refactor
+    //only show the stats when they are complete
+    //challenges/challengeId
+    //figure out who the opponent and the user are
+
   //Get user id 
   $scope.userId = AuthFct.userId;
 
