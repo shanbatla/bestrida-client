@@ -104,4 +104,13 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
       return $http.post('http://www.bestrida.co/api/challenges/complete', completeChallenge);
     }
   };
+}])
+
+.factory('ChallengeStatsFct', ['$http', function($http) {
+
+  return {
+    getChallenge: function(challengerId) {
+      return $http.get('http://www.bestrida.co/api/challenges/' + challengerId);
+    }
+  };
 }]);
