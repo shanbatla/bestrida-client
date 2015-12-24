@@ -7,7 +7,7 @@
         <h2>{{activeChallenge.opponent}}</h2>
         <p>Challenged you to {{activeChallenge.segmentName}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
-        <ion-option-button class="button-assertive" ng-click="removeActiveChallenge(activeChallenge, user.id); activeChallenges.splice($index, 1)">
+        <ion-option-button class="button-assertive" ng-click="removeActiveChallenge(activeChallenge, userId); activeChallenges.splice($index, 1)">
           Challenge Complete
         </ion-option-button>
       </ion-item>

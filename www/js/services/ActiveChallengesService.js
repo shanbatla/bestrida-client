@@ -26,10 +26,10 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 .factory('FeedFct', ['$http', function($http) {
     return {
       pendingChallenge: function(userId) {
-        return $http.get('http://bestrida.co/api/challenges/pending/'+ userId);
+        return $http.get('http://www.bestrida.co/api/challenges/pending/'+ userId);
       },
       getFriends: function(userId) {
-        return $http.get('http://bestrida.co/api/friends/' + userId);
+        return $http.get('http://www.bestrida.co/api/friends/' + userId);
       },
       postAcceptChallenge: function(challenge) {
         return $http.post('http://www.bestrida.co/api/challenges/accept', challenge);
@@ -46,10 +46,10 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
       return $http.post('http://www.bestrida.co/api/challenges/create', data);
     },
     getUser: function(challengerId) {
-      return $http.get('http://bestrida.co/api/users/' + challengerId);
+      return $http.get('http://www.bestrida.co/api/users/' + challengerId);
     },
     getSegments: function() {
-      return $http.get('http://bestrida.co/api/segments/');
+      return $http.get('http://www.bestrida.co/api/segments/');
     }
   };
 }])
@@ -82,7 +82,7 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 
   return {
     getCompletedChallenge: function(userId) {
-      return $http.get('http://bestrida.co/api/challenges/completed/' + userId);
+      return $http.get('http://www.bestrida.co/api/challenges/completed/' + userId);
     }
   };
 }])
@@ -91,7 +91,7 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 
   return {
     getActiveChallenges: function(userId) {
-      return $http.get('http://bestrida.co/api/challenges/active/' + userId);
+      return $http.get('http://www.bestrida.co/api/challenges/active/' + userId);
     },
     removeActiveChallenge: function(activeChallenge, userId) {
       //this is the data format that the server is expecting
@@ -101,7 +101,7 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
         userId: userId
       };
       // activeChallenges.splice(activeChallenges.indexOf(activeChallenge), 1);
-      return $http.post('http://bestrida.co/api/challenges/complete', completeChallenge);
+      return $http.post('http://www.bestrida.co/api/challenges/complete', completeChallenge);
     }
   };
 }]);
