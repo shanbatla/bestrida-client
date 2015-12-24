@@ -5,6 +5,8 @@ angular.module('create', [])
   // Save current user information
   $scope.userId = AuthFct.userId;
 
+  // Set date equal to current date
+  $scope.date = new Date();
   // Load and save current user friends and segments
   CreateFct.getUser($scope.userId)
     .success(function(data) {
@@ -14,7 +16,6 @@ angular.module('create', [])
     });
 
   // Create Challenge - Triggered when 'create challenge' button is clicked
-    // creates data object from user input and then calls factory create method where the post reqeust lives
   $scope.createChallenge = function() {
     var data = {
       segmentId: $scope.segment.id,
@@ -25,7 +26,7 @@ angular.module('create', [])
       challengeeName: $scope.challenger.fullName,
       completionDate: $scope.date
     };
-    CreateFct.createChallenge(data);
+    // CreateFct.createChallenge(data);
   };
 
 
@@ -51,7 +52,6 @@ angular.module('create', [])
     // NOTE: consider refactoring template with templateURL -> templateUrl: 'templates/create-challenge.html',
     template:
       // Template for input field and dropdown
-      // '<span class="input-label">{{label}}</span>'
       '<div class="item item-input-inset">'
         +'<label class="item-input-wrapper">'
           +'<i class="icon ion-search placeholder-icon"></i>'
@@ -62,20 +62,16 @@ angular.module('create', [])
         +'</button>'
       +'</div>'
       // Template that is displayed when dropdown button is clicked
-      +'<div class="optionList padding-left padding-right" ng-hide="showHides">'
-        // +'<ion-scroll>'
+      +'<div class="optionList" ng-hide="showHides">'
           +'<ul class="list">'
-            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | orderBy: labelField2 | limitTo:3">{{item[labelField]}} {{item[labelField1]}}</li>'
+            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | limitTo:3">{{item[labelField]}} {{item[labelField1]}}</li>'
           +'</ul>'
-        // +'</ion-scroll>'
       +'</div>'
       // Template that is displayed when input field is typed in 
-      +'<div class="optionList padding-left padding-right" ng-show="showHide">'
-        // +'<ion-scroll>'
+      +'<div class="optionList" ng-show="showHide">'
           +'<ul class="list">'
             +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | filter:ngModel">{{item[labelField]}} {{item[labelField1]}}</li>'
           +'</ul>'
-        // +'</ion-scroll>'
       +'</div>',
 
     link: function (scope, element, attrs, ngModel) {
