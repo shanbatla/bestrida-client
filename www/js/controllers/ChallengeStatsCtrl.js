@@ -1,6 +1,6 @@
 angular.module('challengestats', [])
 
-.controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'ChallengeStatsFct', function($scope, $stateParams, CompletedFct, AuthFct, ChallengeStatsFct) {
+.controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'CreateFct', 'ChallengeStatsFct', function($scope, $stateParams, CompletedFct, AuthFct, CreateFct, ChallengeStatsFct) {
 
   //Refactor
     //only show the stats when they are complete
