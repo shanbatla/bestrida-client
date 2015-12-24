@@ -2,3 +2,7 @@
 .center-align {
   margin: auto;
 }
+
+.center-text {
+  text-align: center;
+}

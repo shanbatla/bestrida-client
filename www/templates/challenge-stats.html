@@ -8,46 +8,46 @@
 <ion-view view-title="Challenge Stats">
   <ion-content class="padding">
     
-    <!-- Segment - name -->
+    <!-- Result -->
     <div class="row">
       <div class="col.col-100 center-align">
-        <h1>{{segment}}</h1>
+        <h1>You {{challengeResult}}!</h1>
       </div>
     </div>
 
-    <!-- Segment - distance -->
+    <!-- Segment - name -->
+    <div class="row">
+      <div class="col.col-100 center-align">
+        <h3>{{segment}}</h3>
+      </div>
+    </div>
+
+    <!-- Segment - name -->
     <div class="row">
       <div class="col.col-100 center-align">
         <h3>{{distance | number: 2}} Miles</h3>
       </div>
     </div>
 
-    <!-- Result -->
-    <div class="row">
-      <div class="col.col-100 center-align">
-        <h3>You {{challengeResult}}!</h3>
-      </div>
-    </div>
-
     <!-- Opponents -->
     <div class="row">
       <div class="col">
-        <h3>{{userName}}</h3>
+        <h3 class="center-text">{{userName}}</h3>
       </div>
       <div class="col">
-        <h3>{{opponent}}</h3>
+        <h3 class="center-text">{{opponent}}</h3>
       </div>
     </div>
 
     <!-- Time -->
     <div class="row">
-      <div class="col">
-        <h4>Time</h4>
-        <p>{{userTime}}</p>
+      <div class="col center-align">
+        <h4 class="center-text">Time</h4>
+        <p class="center-text">{{userTime}}</p>
       </div>
-      <div class="col">
-        <h4>Time</h4>
-        <p>{{opponentTime}}</p>
+      <div class="col center-align">
+        <h4 class="center-text">Time</h4>
+        <p class="center-text">{{opponentTime}}</p>
       </div>
     </div>
 
