@@ -10,9 +10,9 @@ angular.module('activechallengesctrl', [])
     .success(function(data) {
       $scope.activeChallenges = data;
       $scope.activeChallenges.forEach(function(challenge) {
-        if($scope.userId !== challenge.challengeeId) {
+       if($scope.userId != challenge.challengeeId) {
           challenge.opponent = challenge.challengeeName;
-        } else if($scope.userId !== challenge.challengerId) {
+        } else if($scope.userId != challenge.challengerId) {
           challenge.opponent = challenge.challengerName;
         } else {
           challenge.opponent = "Opponent";
@@ -29,9 +29,9 @@ angular.module('activechallengesctrl', [])
     .success(function(data) {
       $scope.activeChallenges = data;
       $scope.activeChallenges.forEach(function(challenge) {
-        if($scope.userId !== challenge.challengeeId) {
+        if($scope.userId != challenge.challengeeId) {
           challenge.opponent = challenge.challengeeName;
-        } else if($scope.userId !== challenge.challengerId) {
+        } else if($scope.userId != challenge.challengerId) {
           challenge.opponent = challenge.challengerName;
         } else {
           challenge.opponent = "Opponent";
