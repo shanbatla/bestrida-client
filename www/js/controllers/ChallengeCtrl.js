@@ -10,6 +10,9 @@ angular.module('challengers', [])
     FeedFct.pendingChallenge($scope.userId)
     .success(function(data) {
       $scope.challenges = data;
+      $scope.challenges.forEach(function(challenge) {
+        challenge.challengerId == $scope.userId ? challenge.opponent = challenge.challengeeName : challenge.opponent = challenge.challengerName;
+      })
     })
     .finally(function() {
       $scope.$broadcast('scroll.refreshComplete');
@@ -20,6 +23,9 @@ angular.module('challengers', [])
   FeedFct.pendingChallenge($scope.userId)
     .success(function(data) {
       $scope.challenges = data;
+      $scope.challenges.forEach(function(challenge) {
+        challenge.challengerId == $scope.userId ? challenge.opponent = challenge.challengeeName : challenge.opponent = challenge.challengerName;
+      })
     });
 
   // Save current users friends photo to display
