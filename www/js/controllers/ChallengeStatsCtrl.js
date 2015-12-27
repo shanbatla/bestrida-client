@@ -3,8 +3,6 @@ angular.module('challengestats', [])
 .controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'CreateFct', 'ChallengeStatsFct', function($scope, $stateParams, CompletedFct, AuthFct, CreateFct, ChallengeStatsFct) {
 
   //Refactor
-    //only show the stats when they are complete
-    //challenges/challengeId
     //figure out who the opponent and the user are
 
   //Get user id 
@@ -22,6 +20,7 @@ angular.module('challengestats', [])
   //Ping API, get challenge
   ChallengeStatsFct.getChallenge($scope.challengeId)
     .success(function(data) {
+      
       $scope.challenge = data;
 
       var challenge = data;
