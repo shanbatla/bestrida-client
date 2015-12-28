@@ -26,7 +26,7 @@ angular.module('create', [])
       challengeeName: $scope.challenger.fullName,
       completionDate: $scope.date
     };
-    // CreateFct.createChallenge(data);
+    CreateFct.createChallenge(data);
   };
 
 
