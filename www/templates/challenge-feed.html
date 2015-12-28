@@ -12,7 +12,7 @@
     <!-- href="#/tab/pending-detail/:challengeId" -->
 
     <ion-list>
-      <ion-item class="item-thumbnail-left" ng-repeat="challenge in challenges" href="#/tab/pending-detail/:challengeId">
+      <ion-item class="item-thumbnail-left" ng-repeat="challenge in challenges" href="#/tab/pending-detail/{{challenge._id}}">
         <img ng-src="{{photo[challenge.challengerId] || photo[challenge.challengeeId]}}">
         <p>Opponent: {{challenge.opponent}}</p>
         <p>Segment: {{challenge.segmentName}}</p>
