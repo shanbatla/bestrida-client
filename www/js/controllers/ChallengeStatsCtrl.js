@@ -88,9 +88,6 @@ angular.module('challengestats', [])
       } else {
         $scope.challengeStatus = false;
       }
-
-      //Declare opponent
-      // $scope.opponent = challenge.challengeeName;
   
       //Declare segment
       $scope.segment = challenge.segmentName;
