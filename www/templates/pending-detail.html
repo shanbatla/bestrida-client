@@ -6,8 +6,34 @@
 -->
 <ion-view view-title="Pending Detail">
   <ion-content class="padding">
+  
     <p>
-      {{segmentDetail}}
+      Segment Name - {{segmentName}}
     </p>
+
+    <p>
+      Distance - {{distanceInMiles | number: 2}} miles
+    </p>
+
+    <p>
+      City - {{city}}
+    </p>
+
+    <p>
+      State - {{state}}
+    </p>
+
+    <p>
+      Activity Type - {{activityType}}
+    </p>
+
+    <p>
+      Average Grade - {{averageGrade}}
+    </p>
+
+    <p>
+      Climb Category - {{climbCategory}}
+    </p>
+
   </ion-content>
 </ion-view>

@@ -24,7 +24,13 @@ angular.module('pendingdetail', [])
     PendingDetailFct.getSegment(segment)
       .success(function(data) {
         
-        $scope.segmentDetail = data;
+        $scope.segmentName = data.name;
+        $scope.distanceInMiles = data.distance / 1609.34;
+        $scope.city = data.city;
+        $scope.state = data.state;
+        $scope.activityType = data.activityType;
+        $scope.averageGrade = data.averageGrade;
+        $scope.climbCategory = data.climbCategory;
 
       })
       .error(function(data) {
