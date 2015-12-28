@@ -1,8 +1,8 @@
 angular.module('challengers', [])
 
-.controller('ChallengeCtrl', ['$scope', 'FeedFct', 'AuthFct', function($scope, FeedFct, AuthFct) {
+.controller('ChallengeCtrl', ['$scope', 'FeedFct', 'localStorageService', function($scope, FeedFct, localStorageService) {
   // Save current users information
-  $scope.userId = AuthFct.userId;
+  $scope.userId = localStorageService.get('userId');
   $scope.photo = {};
 
   // Update pending challenges when the user pulls down to refresh

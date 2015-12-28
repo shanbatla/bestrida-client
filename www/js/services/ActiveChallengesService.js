@@ -58,6 +58,7 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
   var url = 'http://bestrida.co/auth/strava';
   var loginWindow, token, hasToken, userId, hasUserId;
   var auth = {};
+  
   auth.login = function () {
     loginWindow = $window.open(url, '_blank', 'location=no,toolbar=no');
 
@@ -69,10 +70,8 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
         localStorageService.set('strava-token', token);
         localStorageService.set('token-date', JSON.stringify(new Date()));
         localStorageService.set('userId', userId);
-        auth.userId = userId;
-        auth.token = token;
       }
-      $state.go('tab.account');
+      $state.go('tab.challenge-feed');
     });
   };
   return auth;
