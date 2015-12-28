@@ -13,19 +13,27 @@ angular.module('pendingdetail', [])
 
   // Get challenge id, then get challenge object
   var challengeId = $stateParams.challengeId;
-   //Ping API, get challenge
+  
+  //Ping API, get challenge
   ChallengeStatsFct.getChallenge(challengeId)
     .success(function(data) {
       
-      $scope.segmentId = data.segmentId;
+    var segment = data.segmentId;
+
+    // Get segment and its info
+    PendingDetailFct.getSegment(segment)
+      .success(function(data) {
+        
+        $scope.segmentDetail = data;
+
+      })
+      .error(function(data) {
+        alert('error - PendingDetailFct')
+      });
 
     })
     .error(function(data) {
-      alert('error')
+      alert('error - ChallengeStatsFct')
     });
-  
-
-  // Get segment and its info
 
 }]);
-

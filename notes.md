@@ -40,3 +40,18 @@ Challenge Object
   status: 'complete',
   challengeeCompleted: true,
   challengerCompleted: true }
+
+Segment Object
+  {"_id":10384704,
+  "name":"Zwift TT flatout (3rd Str)",
+  "activityType":"VirtualRide",
+  "distance":7608.6,
+  "averageGrade":0,
+  "climbCategory":0,
+  "city":"Richmond",
+  "state":"Virginia",
+  "country":"United States",
+  "totalElevationGain":15.8,
+  "__v":0,
+  "endLatLng":[37.541402,-77.441758],
+  "startLatLng":[37.544041,-77.439103]}
