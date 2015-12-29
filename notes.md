@@ -7,7 +7,8 @@ Lgin notes
   cordova plugin for in app broswer window - http://cordova.apache.org/docs/en/3.0.0/cordova/inappbrowser/inappbrowser.html
 
 Challenge Object
-  { _id: '5675926c7b221ed533701436',
+{ 
+  _id: '5675926c7b221ed533701436',
   segmentId: 1,
   segmentName: 'Tour de France',
   challengerId: 2711071,
@@ -39,10 +40,12 @@ Challenge Object
   created: '2015-12-19T17:22:52.016Z',
   status: 'complete',
   challengeeCompleted: true,
-  challengerCompleted: true }
+  challengerCompleted: true 
+}
 
 Segment Object
-  {"_id":10384704,
+{
+  "_id":10384704,
   "name":"Zwift TT flatout (3rd Str)",
   "activityType":"VirtualRide",
   "distance":7608.6,
@@ -54,4 +57,5 @@ Segment Object
   "totalElevationGain":15.8,
   "__v":0,
   "endLatLng":[37.541402,-77.441758],
-  "startLatLng":[37.544041,-77.439103]}
+  "startLatLng":[37.544041,-77.439103]
+}
