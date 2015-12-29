@@ -6,3 +6,24 @@
 .center-text {
   text-align: center;
 }
+
+.challenge-result-header {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px; 
+}
+
+.challenge-stats-table {
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.challenge-stats-table-text {
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+  padding-top: 2.5px; 
+  padding-right: 20px; 
+  padding-bottom: 2.5px; 
+  padding-left: 20px; 
+}

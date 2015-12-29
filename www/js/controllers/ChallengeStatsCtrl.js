@@ -60,6 +60,30 @@ angular.module('challengestats', [])
         var readableUserTime = secondsToTime(challenge.challengerTime);
         $scope.userTime = readableUserTime;
 
+        // Declare user avg heart rate
+        $scope.userAvgHeartRate = challenge.challengerAvgHeartrate;
+
+        // Declare opponent avg heart rate
+        $scope.opponentAvgHeartRate = challenge.challengeeAvgHeartrate;
+
+        // Declare user max heart rate
+        $scope.userMaxHeartRate = challenge.challengerMaxHeartRate;
+
+        // Declare opponent max heart rate
+        $scope.opponentMaxHeartRate = challenge.challengeeMaxHeartRate;
+
+        // Declare user cadence
+        $scope.userCadence = challenge.challengerAvgCadence;
+
+        // Declare opponent cadence
+        $scope.opponentCadence = challenge.challengeeAvgCadence;
+
+        // Declare user watts
+        $scope.userWatts = challenge.challengerAvgWatts;
+
+        // Declare opponent watts
+        $scope.opponentWatts = challenge.challengeeAvgWatts;
+
       } else if ($scope.userId == challenge.challengeeId) {
         
         // Declare opponent - challenge.challengeeId is user, challenge.challengerId is opponent
@@ -72,6 +96,30 @@ angular.module('challengestats', [])
         //Declare user time
         var readableUserTime = secondsToTime(challenge.challengeeTime);
         $scope.userTime = readableUserTime;
+
+        // Declare user avg heart rate
+        $scope.userAvgHeartRate = challenge.challengeeAvgHeartrate;
+
+        // Declare opponent avg heart rate
+        $scope.opponentAvgHeartRate = challenge.challengerAvgHeartrate;
+
+        // Declare user max heart rate
+        $scope.userMaxHeartRate = challenge.challengeeMaxHeartRate;
+
+        // Declare opponent max heart rate
+        $scope.opponentMaxHeartRate = challenge.challengerMaxHeartRate;
+
+        // Declare user cadence
+        $scope.userCadence = challenge.challengeeAvgCadence;
+
+        // Declare opponent cadence
+        $scope.opponentCadence = challenge.challengerAvgCadence;
+
+        // Declare user watts
+        $scope.userWatts = challenge.challengeeAvgWatts;
+
+        // Declare opponent watts
+        $scope.opponentWatts = challenge.challengerAvgWatts;
 
       } 
 
