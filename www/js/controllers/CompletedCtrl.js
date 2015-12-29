@@ -1,8 +1,8 @@
 angular.module('completed', [])
 
-.controller('CompletedCtrl', ['$scope','CompletedFct', 'AuthFct',function($scope, CompletedFct, AuthFct) {
+.controller('CompletedCtrl', ['$scope','CompletedFct', 'localStorageService', function($scope, CompletedFct, localStorageService) {
   
-  $scope.userId = AuthFct.userId;
+  $scope.userId = localStorageService.get('userId');
 
   $scope.doRefresh = function() {
     CompletedFct.getCompletedChallenge($scope.userId)

@@ -1,8 +1,8 @@
 angular.module('activechallengesctrl', [])
 
-.controller('ActiveChallengesCtrl',['$scope', 'ActiveChallengesFct', 'AuthFct', function($scope, ActiveChallengesFct, AuthFct) {
+.controller('ActiveChallengesCtrl',['$scope', 'ActiveChallengesFct', 'localStorageService', function($scope, ActiveChallengesFct, localStorageService) {
 
-  $scope.userId = AuthFct.userId;
+  $scope.userId = localStorageService.get('userId');
 
   $scope.doRefresh = function() {
 

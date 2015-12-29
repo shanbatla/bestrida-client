@@ -1,6 +1,6 @@
 angular.module('challengestats', [])
 
-.controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'AuthFct', 'CreateFct', 'ChallengeStatsFct', function($scope, $stateParams, CompletedFct, AuthFct, CreateFct, ChallengeStatsFct) {
+.controller('ChallengeStatsCtrl', ['$scope', '$stateParams', 'CompletedFct', 'localStorageService', 'CreateFct', 'ChallengeStatsFct', function($scope, $stateParams, CompletedFct, localStorageService, CreateFct, ChallengeStatsFct) {
 
   //Use this function to convert seconds in human-readable time
   function secondsToTime(secs) {
@@ -28,7 +28,7 @@ angular.module('challengestats', [])
 
 
   //Get user id 
-  $scope.userId = AuthFct.userId;
+  $scope.userId = localStorageService.get('userId');
 
   // Get user name
   CreateFct.getUser($scope.userId)

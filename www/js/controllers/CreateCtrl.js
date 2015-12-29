@@ -1,9 +1,9 @@
 angular.module('create', [])
 
-.controller('CreateCtrl', ['$scope', '$http', 'CreateFct', 'AuthFct', function($scope, $http, CreateFct, AuthFct) {
+.controller('CreateCtrl', ['$scope', '$http', 'CreateFct', 'localStorageService', function($scope, $http, CreateFct, localStorageService) {
 
   // Save current user information
-  $scope.userId = AuthFct.userId;
+  $scope.userId = localStorageService.get('userId');
 
   // Set date equal to current date
   $scope.date = new Date();
