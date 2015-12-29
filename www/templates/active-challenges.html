@@ -6,6 +6,7 @@
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="activeChallenge in activeChallenges" type="item-text-wrap" href="#/tab/active-detail/{{activeChallenge._id}}">
         <h2>{{activeChallenge.opponent}}</h2>
         <p>Challenged you to {{activeChallenge.segmentName}}</p>
+        <p>Complete by: {{activeChallenge.expires | date:format:shortDate}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
         <ion-option-button class="button-assertive" ng-click="removeActiveChallenge(activeChallenge, userId); activeChallenges.splice($index, 1)">
           Challenge Complete
