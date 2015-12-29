@@ -112,4 +112,13 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
       return $http.get('http://www.bestrida.co/api/challenges/' + challengerId);
     }
   };
+}])
+
+.factory('PendingDetailFct', ['$http', function($http) {
+
+  return {
+    getSegment: function(segmentId) {
+      return $http.get('http://www.bestrida.co/api/segments/' + segmentId);
+    }
+  };
 }]);
