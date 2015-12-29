@@ -15,6 +15,7 @@
 
     <!-- Display challenge if it is complete -->
     <div ng-show="challengeStatus">
+    <div class="challenge-result-header">
     <!-- Result -->
       <div class="row">
         <div class="col.col-100 center-align">
@@ -35,6 +36,7 @@
           <h3>{{distance | number: 2}} Miles</h3>
         </div>
       </div>
+    </div>
 
       <!-- Opponents -->
       <div class="row">
@@ -47,7 +49,7 @@
       </div>
 
       <!-- Time -->
-      <div class="row">
+   <!--    <div class="row">
         <div class="col center-align">
           <h4 class="center-text">Time</h4>
           <p class="center-text">{{userTime}}</p>
@@ -57,6 +59,69 @@
           <p class="center-text">{{opponentTime}}</p>
         </div>
       </div>
+    </div> -->
+
+
+    <div class="col center-align">
+
+    <table class="challenge-stats-table">
+      <!-- Time -->
+      <tr>
+        <td class="challenge-stats-table-text">{{userTime}}</td>
+        <td>
+          <p class="challenge-stats-table-text">
+            <b>Time</b>
+          </p>
+        </td>
+        <td class="challenge-stats-table-text">{{opponentTime}}</td>
+      </tr>
+
+      <!-- Average Heart Rate -->
+      <tr>
+        <td class="challenge-stats-table-text">{{userTime}}</td>
+        <td>
+          <p class="challenge-stats-table-text">
+            <b>Avg Heart Rate</b>
+          </p>
+        </td>
+        <td class="challenge-stats-table-text">{{opponentTime}}</td>
+      </tr>
+
+      <!-- Max Heart Rate -->
+      <tr>
+        <td class="challenge-stats-table-text">{{userTime}}</td>
+        <td>
+          <p class="challenge-stats-table-text">
+            <b>Max Heart Rate</b>
+          </p>
+        </td>
+        <td class="challenge-stats-table-text">{{opponentTime}}</td>
+      </tr>
+  
+      <!-- Cadence -->
+      <tr>
+        <td class="challenge-stats-table-text">{{userTime}}</td>
+        <td>
+          <p class="challenge-stats-table-text">
+            <b>Cadence</b>
+          </p>
+        </td>
+        <td class="challenge-stats-table-text">{{opponentTime}}</td>
+      </tr>
+
+      <!-- Watts -->
+      <tr>
+        <td class="challenge-stats-table-text">{{userTime}}</td>
+        <td>
+          <p class="challenge-stats-table-text">
+            <b>Watts</b>
+          </p>
+        </td>
+        <td class="challenge-stats-table-text">{{opponentTime}}</td>
+      </tr>
+      
+    </table>
+
     </div>
 
   </ion-content>
