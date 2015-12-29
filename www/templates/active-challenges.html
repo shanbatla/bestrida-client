@@ -3,7 +3,7 @@
     <ion-list>
       <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
       </ion-refresher>
-      <ion-item class="item-remove-animate item-icon-right" ng-repeat="activeChallenge in activeChallenges" type="item-text-wrap" href="#/tab/active-detail/:challengeId">
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="activeChallenge in activeChallenges" type="item-text-wrap" href="#/tab/active-detail/{{activeChallenge._id}}">
         <h2>{{activeChallenge.opponent}}</h2>
         <p>Challenged you to {{activeChallenge.segmentName}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>

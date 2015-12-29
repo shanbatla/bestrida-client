@@ -59,3 +59,20 @@ Segment Object
   "endLatLng":[37.541402,-77.441758],
   "startLatLng":[37.544041,-77.439103]
 }
+
+Active Challenge Object
+{
+  "_id":"567f20a8d3058f555ce4d227",
+  "segmentId":1,
+  "segmentName":"Segment 1",
+  "challengerId":12348243,
+  "challengerName":"Shan Batla 1",
+  "challengeeId":2711071,
+  "challengeeName":"Posh Spice 1",
+  "created":"2015-12-26T23:20:08.842Z",
+  "expires":"2015-12-30T23:27:00.000Z",
+  "__v":0,"expired":false,
+  "status":"active",
+  "challengeeCompleted":false,
+  "challengerCompleted":false
+}
