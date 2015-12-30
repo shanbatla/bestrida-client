@@ -1,20 +1,16 @@
-<ion-view view-title="Login" name="login">
+<ion-view view-title="Login" hide-nav-bar="true" name="login" class="login-background">
   <ion-content class="padding">
-<!--       <div class="list list-inset">
-          <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="data.username">
-          </label>
-          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
-          </label>
-      </div> -->
-    <div class="row">
-      <div class="col col-5"></div>
+    <div class="row row-center">
       <div class="col col-center">
-        <img src="img/LogInWithStrava.png" alt="Login with Strava" ng-click="login()"></img>
+        <span class="login-text"><strong>Welcome to Bestrida</strong></span>
       </div>
-      <div class="col col-5"></div>
+    </div>
+    <div class="row row-center">
+      <div class="col col-center">
+        <button class="button button-block login-button" ng-click="login()">
+          Connect with Strava
+        </button>
+      </div>
     </div>
   </ion-content>
 </ion-view>
-

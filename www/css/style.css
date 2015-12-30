@@ -7,6 +7,25 @@
   text-align: center;
 }
 
+.login-background{
+  background: url('../img/LoginBackground.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-text {
+  color: #fff;
+  font-size: 24px;
+}
+
+.login-button {
+  background-color: #fc4c02;
+  border-color: #fc4c02;
+  color: #fff;
+}
+
 .challenge-result-header {
     border-radius: 25px;
     border: 2px solid black;
@@ -26,4 +45,15 @@
   padding-right: 20px; 
   padding-bottom: 2.5px; 
   padding-left: 20px; 
+}
+
+.scroll-content {
+  display: table !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.scroll {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
