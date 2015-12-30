@@ -1,15 +1,16 @@
 angular.module('pendingdetail', [])
 
-.controller('PendingDetailCtrl', ['$scope', '$stateParams', 'ChallengeStatsFct', 'PendingDetailFct', function($scope, $stateParams, ChallengeStatsFct, PendingDetailFct) {
+.controller('PendingDetailCtrl', ['$scope', '$stateParams', 'ChallengeStatsFct', 'PendingDetailFct', 'FeedFct', 'localStorageService', function($scope, $stateParams, ChallengeStatsFct, PendingDetailFct, FeedFct, localStorageService) {
  
   // Get challenge id, then get challenge object
   var challengeId = $stateParams.challengeId;
+  $scope.userId = localStorageService.get('userId');
   
   //Ping API, get challenge
   ChallengeStatsFct.getChallenge(challengeId)
     .success(function(data) {
-      
-    var segment = data.segmentId;
+      $scope.challenge = data;
+      var segment = data.segmentId;
 
     // Get segment and its info
     PendingDetailFct.getSegment(segment)
@@ -33,5 +34,12 @@ angular.module('pendingdetail', [])
     .error(function(data) {
       console.log('error');
     });
+
+    $scope.declineChallenge = function(challenge) {
+      var data = {
+        id: challenge._id
+      };
+      FeedFct.postDeclineChallenge(data);
+    };
 
 }]);
