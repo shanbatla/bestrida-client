@@ -7,29 +7,35 @@
 <ion-view view-title="Active Detail">
   <ion-content class="padding">
   
-    <h3>
-      Segment Name - {{segmentName}}
-    </h3>
+    <div class="center-align">
 
-    <h4>
-      Distance - {{distanceInMiles | number: 2}} miles
-    </h4>
+      <div class="pending-detail-header">
+        <h3 class="center-text">
+          Segment Name - {{segmentName}}
+        </h3>
+      </div>
 
-    <h4>
-      Location - {{city}}, {{state}}
-    </h4>
+      <h4 class="center-text">
+        Distance - {{distanceInMiles | number: 2}} miles
+      </h4>
 
-    <h4>
-      Activity Type - {{activityType}}
-    </h4>
+      <h4 class="center-text">
+        Location - {{city}}, {{state}}
+      </h4>
 
-    <h4>
-      Average Grade - {{averageGrade}}
-    </h4>
+      <h4 class="center-text">
+        Activity Type - {{activityType}}
+      </h4>
 
-    <h4>
-      Climb Category - {{climbCategory}}
-    </h4>
+      <h4 class="center-text">
+        Average Grade - {{averageGrade}}
+      </h4>
+
+      <h4 class="center-text">
+        Climb Category - {{climbCategory}}
+      </h4>
+
+    </div>
 
   </ion-content>
 </ion-view>

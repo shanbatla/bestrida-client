@@ -60,3 +60,9 @@
   padding-bottom: 2.5px; 
   padding-left: 20px; 
 }
+
+.pending-detail-header {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px; 
+}
