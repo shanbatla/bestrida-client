@@ -64,13 +64,13 @@ angular.module('create', [])
       // Template that is displayed when dropdown button is clicked
       +'<div class="optionList" ng-hide="showHides">'
           +'<ul class="list">'
-            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | limitTo:3">{{item[labelField]}} {{item[labelField1]}}</li>'
+            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | limitTo:3">{{item[labelField]}}</li>'
           +'</ul>'
       +'</div>'
       // Template that is displayed when input field is typed in 
       +'<div class="optionList" ng-show="showHide">'
           +'<ul class="list">'
-            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | filter:ngModel">{{item[labelField]}} {{item[labelField1]}}</li>'
+            +'<li class="item" ng-click="select(item)" ng-repeat="item in provider | filter:ngModel">{{item[labelField]}}</li>'
           +'</ul>'
       +'</div>',
 
