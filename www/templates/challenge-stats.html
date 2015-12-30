@@ -78,46 +78,46 @@
 
       <!-- Average Heart Rate -->
       <tr>
-        <td class="challenge-stats-table-text">{{userAvgHeartRate}} bpm</td>
+        <td class="challenge-stats-table-text">{{userAvgHeartRate | number: 0}}</td>
         <td>
           <p class="challenge-stats-table-text">
             <b>Avg Heart Rate</b>
           </p>
         </td>
-        <td class="challenge-stats-table-text">{{opponentAvgHeartRate}} bpm</td>
+        <td class="challenge-stats-table-text">{{opponentAvgHeartRate | number: 0}}</td>
       </tr>
 
       <!-- Max Heart Rate -->
       <tr>
-        <td class="challenge-stats-table-text">{{userMaxHeartRate}} bpm</td>
+        <td class="challenge-stats-table-text">{{userMaxHeartRate | number: 0}}</td>
         <td>
           <p class="challenge-stats-table-text">
             <b>Max Heart Rate</b>
           </p>
         </td>
-        <td class="challenge-stats-table-text">{{opponentMaxHeartRate}} bpm</td>
+        <td class="challenge-stats-table-text">{{opponentMaxHeartRate | number: 0}}</td>
       </tr>
   
       <!-- Cadence -->
       <tr>
-        <td class="challenge-stats-table-text">{{userCadence}} rpm</td>
+        <td class="challenge-stats-table-text">{{userCadence | number: 0}}</td>
         <td>
           <p class="challenge-stats-table-text">
             <b>Cadence</b>
           </p>
         </td>
-        <td class="challenge-stats-table-text">{{opponentCadence}} rpm</td>
+        <td class="challenge-stats-table-text">{{opponentCadence | number: 0}}</td>
       </tr>
 
       <!-- Watts -->
       <tr>
-        <td class="challenge-stats-table-text">{{userWatts}}</td>
+        <td class="challenge-stats-table-text">{{userWatts | number: 0}}</td>
         <td>
           <p class="challenge-stats-table-text">
             <b>Watts</b>
           </p>
         </td>
-        <td class="challenge-stats-table-text">{{opponentWatts}}</td>
+        <td class="challenge-stats-table-text">{{opponentWatts | number: 0}}</td>
       </tr>
       
     </table>

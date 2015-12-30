@@ -20,18 +20,18 @@ angular.module('activedetail', [])
         $scope.city = data.city;
         $scope.state = data.state;
         $scope.activityType = data.activityType;
-        $scope.averageGrade = data.averageGrade;
-        $scope.climbCategory = data.climbCategory;
-        $scope.totalElevationGain = data.totalElevationGain;
+        $scope.averageGrade = data.averageGrade || 'Not Provided';
+        $scope.climbCategory = data.climbCategory || 'Not Provided';
+        $scope.totalElevationGain = data.totalElevationGain || 'Not Provided';
 
       })
       .error(function(data) {
-        alert('error')
+        console.log('error');
       });
 
     })
     .error(function(data) {
-      alert('error')
+      console.log('error');
     });
 
 }]);
