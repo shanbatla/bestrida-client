@@ -18,8 +18,12 @@
         <p>Segment: {{challenge.segmentName}}</p>
         <p>Complete By: {{challenge.expires | date:format:shortDate}}</p>
         <div class="button-bar" ng-show="{{challenge.challengeeId}} === {{userId}}">
-          <button class="button button-stable button-block button-small icon ion-close-round" ng-click="declineChallenge(challenge); challenges.splice($index, 1); $event.preventDefault();"></button>
-          <button class="button button-stable button-block button-small icon ion-checkmark-round" ng-click="acceptChallenge(challenge); challenges.splice($index, 1); $event.preventDefault();"></button>
+          <button class="button button-outline button-block button-small" ng-click="declineChallenge(challenge); challenges.splice($index, 1); $event.preventDefault();">
+            <i class="icon ion-close-round assertive"></i>
+          </button>
+          <button class="button button-outline button-block button-small" ng-click="acceptChallenge(challenge); challenges.splice($index, 1); $event.preventDefault();">
+            <i class="icon ion-checkmark-round balanced"></i>
+          </button>
         </div>
       </ion-item>
     </ion-list>
