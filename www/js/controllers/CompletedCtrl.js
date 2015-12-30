@@ -3,6 +3,7 @@ angular.module('completed', [])
 .controller('CompletedCtrl', ['$scope','CompletedFct', 'localStorageService', function($scope, CompletedFct, localStorageService) {
   
   $scope.userId = localStorageService.get('userId');
+  $scope.photo = {};
 
   $scope.doRefresh = function() {
     CompletedFct.getCompletedChallenge($scope.userId)
@@ -33,9 +34,16 @@ angular.module('completed', [])
       $scope.$broadcast('scroll.refreshComplete');
     })
     .error(function(error) {
-      alert(error);
+      console.log(error);
     });
   };
+
+  CompletedFct.getFriends($scope.userId)
+    .success(function(data) {
+      data.forEach(function(friend) {
+        $scope.photo[friend.id] = friend.photo;
+      });
+    });
 
   CompletedFct.getCompletedChallenge($scope.userId)
     .success(function(data) {
@@ -62,7 +70,7 @@ angular.module('completed', [])
       });
     })
     .error(function(error) {
-      alert(error);
+      console.log(error);
     });
 
 }]);

@@ -12,7 +12,7 @@ angular.module('challengers', [])
       $scope.challenges = data;
       $scope.challenges.forEach(function(challenge) {
         challenge.challengerId == $scope.userId ? challenge.opponent = challenge.challengeeName : challenge.opponent = challenge.challengerName;
-      })
+      });
     })
     .finally(function() {
       $scope.$broadcast('scroll.refreshComplete');
@@ -25,7 +25,7 @@ angular.module('challengers', [])
       $scope.challenges = data;
       $scope.challenges.forEach(function(challenge) {
         challenge.challengerId == $scope.userId ? challenge.opponent = challenge.challengeeName : challenge.opponent = challenge.challengerName;
-      })
+      });
     });
 
   // Save current users friends photo to display
@@ -41,7 +41,6 @@ angular.module('challengers', [])
     var data = {
       id: challenge._id
     };
-    alert("You've accepted this challenge!");
     FeedFct.postAcceptChallenge(data);
   };
 
@@ -49,7 +48,6 @@ angular.module('challengers', [])
     var data = {
       id: challenge._id
     };
-    alert("You've declined this challenge...");
     FeedFct.postDeclineChallenge(data);
   };
 

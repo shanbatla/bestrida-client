@@ -1,28 +1,5 @@
 angular.module('activechallengesservice', ['LocalStorageModule'])
 
-
-.factory('ActiveChallenges', function() {
-
-  var challengers = mockChallengers;
-
-  return {
-    all: function() {
-      return challengers;
-    },
-    remove: function(challenger) {
-      challengers.splice(challengers.indexOf(challenger), 1);
-    },
-    get: function(challengerID) {
-      for (var i = 0; i < challengers.length; i++) {
-        if (challengers[i].id === parseInt(challengerID)) {
-          return challengers[i];
-        }
-      }
-      return null;
-    }
-  };
-})
-
 .factory('FeedFct', ['$http', function($http) {
     return {
       pendingChallenge: function(userId) {
@@ -57,11 +34,9 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 .factory('AuthFct', function ($window, $state, localStorageService, $location) {
   var url = 'http://bestrida.co/auth/strava';
   var loginWindow, token, hasToken, userId, hasUserId;
-  var auth = {};
-  
-  auth.login = function () {
+  return {
+  login : function () {
     loginWindow = $window.open(url, '_blank', 'location=no,toolbar=no');
-
     loginWindow.addEventListener('loadstart', function (event) {
       if((event.url).startsWith("http://www.bestrida.co/loggedIn.html")) {
         var token = event.url.match('oauth_token=(.*)&userId')[1];
@@ -73,13 +48,15 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
       }
       $state.go('tab.challenge-feed');
     });
-  };
-  return auth;
+  }
+};
 })
 
 .factory('CompletedFct', ['$http', function($http) {
-
   return {
+    getFriends: function(userId) {
+      return $http.get('http://www.bestrida.co/api/friends/' + userId);
+    },
     getCompletedChallenge: function(userId) {
       return $http.get('http://www.bestrida.co/api/challenges/completed/' + userId);
     }
@@ -87,10 +64,12 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 }])
 
 .factory('ActiveChallengesFct', ['$http', function($http) {
-
   return {
     getActiveChallenges: function(userId) {
       return $http.get('http://www.bestrida.co/api/challenges/active/' + userId);
+    },
+    getFriends: function(userId) {
+      return $http.get('http://www.bestrida.co/api/friends/' + userId);
     },
     removeActiveChallenge: function(activeChallenge, userId) {
       //this is the data format that the server is expecting
@@ -106,7 +85,6 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 }])
 
 .factory('ChallengeStatsFct', ['$http', function($http) {
-
   return {
     getChallenge: function(challengerId) {
       return $http.get('http://www.bestrida.co/api/challenges/' + challengerId);
@@ -115,7 +93,6 @@ angular.module('activechallengesservice', ['LocalStorageModule'])
 }])
 
 .factory('PendingDetailFct', ['$http', function($http) {
-
   return {
     getSegment: function(segmentId) {
       return $http.get('http://www.bestrida.co/api/segments/' + segmentId);

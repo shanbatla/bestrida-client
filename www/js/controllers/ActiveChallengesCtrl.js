@@ -3,6 +3,7 @@ angular.module('activechallengesctrl', [])
 .controller('ActiveChallengesCtrl',['$scope', 'ActiveChallengesFct', 'localStorageService', function($scope, ActiveChallengesFct, localStorageService) {
 
   $scope.userId = localStorageService.get('userId');
+  $scope.photo = {};
 
   $scope.doRefresh = function() {
 
@@ -22,7 +23,6 @@ angular.module('activechallengesctrl', [])
     .finally(function() {
       $scope.$broadcast('scroll.refreshComplete');
     });
-    
   };
 
   ActiveChallengesFct.getActiveChallenges($scope.userId)
@@ -38,6 +38,14 @@ angular.module('activechallengesctrl', [])
         }
       });
     });
+
+  ActiveChallengesFct.getFriends($scope.userId)
+    .success(function(data) {
+      data.forEach(function(friend) {
+        $scope.photo[friend.id] = friend.photo;
+      });
+    });
+
   var userId = $scope.userId;
   $scope.removeActiveChallenge = function(activeChallenge, userId) {
     ActiveChallengesFct.removeActiveChallenge(activeChallenge, userId);
