@@ -15,6 +15,13 @@
   background-size: cover;
 }
 
+.login-container {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+}
+
 .login-text {
   color: #fff;
   font-size: 24px;
@@ -45,15 +52,4 @@
   padding-right: 20px; 
   padding-bottom: 2.5px; 
   padding-left: 20px; 
-}
-
-.scroll-content {
-  display: table !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-.scroll {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
 }
