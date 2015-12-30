@@ -15,11 +15,18 @@
   background-size: cover;
 }
 
+.title-container {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 50%;
+}
+
 .login-container {
   position: absolute;
   text-align: center;
   width: 100%;
-  bottom: 0px;
+  bottom: 0;
 }
 
 .login-text {
