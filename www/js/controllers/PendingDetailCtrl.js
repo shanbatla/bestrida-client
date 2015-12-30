@@ -22,6 +22,7 @@ angular.module('pendingdetail', [])
         $scope.activityType = data.activityType;
         $scope.averageGrade = data.averageGrade;
         $scope.climbCategory = data.climbCategory;
+        $scope.totalElevationGain = data.totalElevationGain;
 
       })
       .error(function(data) {
