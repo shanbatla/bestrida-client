@@ -61,28 +61,28 @@ angular.module('challengestats', [])
         $scope.userTime = readableUserTime;
 
         // Declare user avg heart rate
-        $scope.userAvgHeartRate = challenge.challengerAvgHeartrate;
+        $scope.userAvgHeartRate = challenge.challengerAvgHeartrate || 'Not Provided';
 
         // Declare opponent avg heart rate
-        $scope.opponentAvgHeartRate = challenge.challengeeAvgHeartrate;
+        $scope.opponentAvgHeartRate = challenge.challengeeAvgHeartrate || 'Not Provided';
 
         // Declare user max heart rate
-        $scope.userMaxHeartRate = challenge.challengerMaxHeartRate;
+        $scope.userMaxHeartRate = challenge.challengerMaxHeartRate || 'Not Provided';
 
         // Declare opponent max heart rate
-        $scope.opponentMaxHeartRate = challenge.challengeeMaxHeartRate;
+        $scope.opponentMaxHeartRate = challenge.challengeeMaxHeartRate || 'Not Provided';
 
         // Declare user cadence
-        $scope.userCadence = challenge.challengerAvgCadence;
+        $scope.userCadence = challenge.challengerAvgCadence || 'Not Provided';
 
         // Declare opponent cadence
-        $scope.opponentCadence = challenge.challengeeAvgCadence;
+        $scope.opponentCadence = challenge.challengeeAvgCadence || 'Not Provided';
 
         // Declare user watts
-        $scope.userWatts = challenge.challengerAvgWatts;
+        $scope.userWatts = challenge.challengerAvgWatts || 'Not Provided';
 
         // Declare opponent watts
-        $scope.opponentWatts = challenge.challengeeAvgWatts;
+        $scope.opponentWatts = challenge.challengeeAvgWatts || 'Not Provided';
 
       } else if ($scope.userId == challenge.challengeeId) {
         
@@ -98,28 +98,28 @@ angular.module('challengestats', [])
         $scope.userTime = readableUserTime;
 
         // Declare user avg heart rate
-        $scope.userAvgHeartRate = challenge.challengeeAvgHeartrate;
+        $scope.userAvgHeartRate = challenge.challengeeAvgHeartrate || 'Not Provided';
 
         // Declare opponent avg heart rate
-        $scope.opponentAvgHeartRate = challenge.challengerAvgHeartrate;
+        $scope.opponentAvgHeartRate = challenge.challengerAvgHeartrate || 'Not Provided';
 
         // Declare user max heart rate
-        $scope.userMaxHeartRate = challenge.challengeeMaxHeartRate;
+        $scope.userMaxHeartRate = challenge.challengeeMaxHeartRate || 'Not Provided';
 
         // Declare opponent max heart rate
-        $scope.opponentMaxHeartRate = challenge.challengerMaxHeartRate;
+        $scope.opponentMaxHeartRate = challenge.challengerMaxHeartRate || 'Not Provided';
 
         // Declare user cadence
-        $scope.userCadence = challenge.challengeeAvgCadence;
+        $scope.userCadence = challenge.challengeeAvgCadence || 'Not Provided';
 
         // Declare opponent cadence
-        $scope.opponentCadence = challenge.challengerAvgCadence;
+        $scope.opponentCadence = challenge.challengerAvgCadence || 'Not Provided';
 
         // Declare user watts
-        $scope.userWatts = challenge.challengeeAvgWatts;
+        $scope.userWatts = challenge.challengeeAvgWatts || 'Not Provided';
 
         // Declare opponent watts
-        $scope.opponentWatts = challenge.challengerAvgWatts;
+        $scope.opponentWatts = challenge.challengerAvgWatts || 'Not Provided';
 
       } 
 
@@ -147,7 +147,7 @@ angular.module('challengestats', [])
       
     })
     .error(function(data) {
-      alert('error')
+      console.log('error');
     });
   
 }]);
