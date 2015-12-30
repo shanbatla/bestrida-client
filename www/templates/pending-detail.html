@@ -15,7 +15,7 @@
         </h3>
       </div>
 
-      <h4 class="center-text">
+     <!--  <h4 class="center-text">
         Distance - {{distanceInMiles | number: 2}} miles
       </h4>
 
@@ -33,7 +33,52 @@
 
       <h4 class="center-text">
         Climb Category - {{climbCategory}}
-      </h4>
+      </h4> -->
+
+    <div class="col center-align">
+
+    <table>
+      
+      <!-- Time -->
+      <tr>
+        <td><b>Distance - </b></td>
+        <td class="challenge-stats-table-data">{{distanceInMiles | number: 2}} miles</td>
+      </tr>
+
+      <!-- Location -->
+      <tr>
+        <td><b>Location - </b></td>
+        <td class="challenge-stats-table-data">{{city}}, {{state}}</td>
+      </tr>
+
+      <!-- Activity Type -->
+      <tr>
+        <td><b>Activity Type - </b></td>
+        <td class="challenge-stats-table-data">{{activityType}}</td>
+      </tr>
+
+      <!-- Average Grade -->
+      <tr>
+        <td><b>Average Grade - </b></td>
+        <td class="challenge-stats-table-data">{{averageGrade}}%</td>
+      </tr>
+
+       <!-- Climb Category -->
+      <tr>
+        <td><b>Climb Category - </b></td>
+        <td class="challenge-stats-table-data">{{climbCategory}}</td>
+      </tr>
+
+      <!-- Total Elevation Gain -->
+      <tr>
+        <td><b>Elevation Gain - </b></td>
+        <td class="challenge-stats-table-data">{{totalElevationGain | number: 0}} meters</td>
+      </tr>
+      
+    </table>
+
+    </div>
+
     </div>
 
   </ion-content>
